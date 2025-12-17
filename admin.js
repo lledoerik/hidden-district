@@ -8,7 +8,7 @@ class AdminSystem {
         // IMPORTANT: Canvia aquesta contrasenya!
         // Aquesta és la contrasenya encriptada amb SHA-256
         // Contrasenya per defecte: "hiddendistrict2024"
-        this.passwordHash = "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918";
+        this.passwordHash = "b01bd5d38ff37127e4ef69842926163b4fedfc5db0dac5ab3bab10d963dc8265";
         this.content = null;
         this.init();
     }
