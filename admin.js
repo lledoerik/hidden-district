@@ -77,9 +77,18 @@ class AdminSystem {
         document.body.appendChild(modal);
 
         // Event listeners
-        document.getElementById('adminLoginForm').addEventListener('submit', (e) => {
+        const loginForm = document.getElementById('adminLoginForm');
+        loginForm.addEventListener('submit', (e) => {
             e.preventDefault();
             this.login();
+        });
+
+        // También manejar Enter en el campo de contraseña
+        document.getElementById('adminPassword').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                this.login();
+            }
         });
 
         document.getElementById('adminCancelBtn').addEventListener('click', () => {
