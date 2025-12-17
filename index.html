@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hidden District - Bar de Cócteles</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="admin.css">
 </head>
 <body>
     <!-- Hero Section -->
@@ -30,8 +31,8 @@
         </nav>
         <div class="hero-content">
             <div class="hero-logo">
-                <h2>HIDDEN DISTRICT</h2>
-                <p class="tagline">Lorem ipsum dolor sit amet</p>
+                <h2 data-editable="hero.title" data-editable-type="text">HIDDEN DISTRICT</h2>
+                <p class="tagline" data-editable="hero.tagline" data-editable-type="text">COCTELERÍA EVOLUTIVA</p>
             </div>
         </div>
         <div class="scroll-indicator">
@@ -43,18 +44,18 @@
     <section id="distrito" class="section distrito-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">El Distrito</h2>
+                <h2 class="section-title" data-editable="distrito.title" data-editable-type="text">El Distrito</h2>
                 <div class="section-divider"></div>
             </div>
             <div class="distrito-content">
                 <div class="distrito-text">
-                    <p class="intro-text">
+                    <p class="intro-text" data-editable="distrito.intro" data-editable-type="text">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                     </p>
-                    <p>
+                    <p data-editable="distrito.paragraph1" data-editable-type="text">
                         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                     </p>
-                    <p>
+                    <p data-editable="distrito.paragraph2" data-editable-type="text">
                         Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                     </p>
                 </div>
@@ -71,8 +72,8 @@
                     </div>
                     <div class="feature">
                         <div class="feature-icon icon-music"></div>
-                        <h3>Lorem Ipsum</h3>
-                        <p>Lorem ipsum dolor sit amet</p>
+                        <h3>Musica</h3>
+                        <p>Eventos cada semana</p>
                     </div>
                 </div>
             </div>
@@ -83,9 +84,9 @@
     <section id="cocteles" class="section cocteles-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Cócteles De Autor</h2>
+                <h2 class="section-title" data-editable="cocteles.title" data-editable-type="text">Cócteles De Autor</h2>
                 <div class="section-divider"></div>
-                <p class="section-subtitle">Lorem ipsum dolor sit amet consectetur adipiscing elit</p>
+                <p class="section-subtitle" data-editable="cocteles.subtitle" data-editable-type="text">Lorem ipsum dolor sit amet consectetur adipiscing elit</p>
             </div>
 
             <div class="menu-tabs">
@@ -191,9 +192,9 @@
     <section id="eventos" class="section eventos-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Eventos</h2>
+                <h2 class="section-title" data-editable="eventos.title" data-editable-type="text">Eventos</h2>
                 <div class="section-divider"></div>
-                <p class="section-subtitle">Lorem ipsum dolor sit amet consectetur</p>
+                <p class="section-subtitle" data-editable="eventos.subtitle" data-editable-type="text">Lorem ipsum dolor sit amet consectetur</p>
             </div>
             <div class="eventos-grid">
                 <div class="evento-card">
@@ -246,14 +247,14 @@
     <section id="eventos-privados" class="section eventos-privados-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Eventos Privados</h2>
+                <h2 class="section-title" data-editable="eventosPrivados.title" data-editable-type="text">Eventos Privados</h2>
                 <div class="section-divider"></div>
-                <p class="section-subtitle">Lorem ipsum dolor sit amet consectetur</p>
+                <p class="section-subtitle" data-editable="eventosPrivados.subtitle" data-editable-type="text">Lorem ipsum dolor sit amet consectetur</p>
             </div>
             <div class="eventos-privados-content">
                 <div class="privados-info">
-                    <h3>Lorem Ipsum Dolor</h3>
-                    <p>
+                    <h3 data-editable="eventosPrivados.mainTitle" data-editable-type="text">Lorem Ipsum Dolor</h3>
+                    <p data-editable="eventosPrivados.description" data-editable-type="text">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
                     </p>
                     <ul class="privados-features">
@@ -301,26 +302,26 @@
     <section id="contacto" class="section contacto-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Contacto</h2>
+                <h2 class="section-title" data-editable="contacto.title" data-editable-type="text">Contacto</h2>
                 <div class="section-divider"></div>
             </div>
             <div class="contacto-content">
                 <div class="contacto-info">
                     <div class="info-item">
-                        <h3><i class="icon-location"></i> Lorem Ipsum</h3>
-                        <p>Lorem ipsum, 123<br>28001 Lorem, Ipsum</p>
+                        <h3><i class="icon-location"></i> <span data-editable="contacto.address.title" data-editable-type="text">Lorem Ipsum</span></h3>
+                        <p><span data-editable="contacto.address.line1" data-editable-type="text">Lorem ipsum, 123</span><br><span data-editable="contacto.address.line2" data-editable-type="text">28001 Lorem, Ipsum</span></p>
                     </div>
                     <div class="info-item">
                         <h3><i class="icon-phone"></i> Lorem Ipsum</h3>
-                        <p>+34 123 456 789</p>
+                        <p data-editable="contacto.phone" data-editable-type="text">+34 123 456 789</p>
                     </div>
                     <div class="info-item">
                         <h3><i class="icon-email"></i> Email</h3>
-                        <p>lorem@ipsum.com</p>
+                        <p data-editable="contacto.email" data-editable-type="text">lorem@ipsum.com</p>
                     </div>
                     <div class="info-item">
-                        <h3><i class="icon-clock"></i> Lorem Ipsum</h3>
-                        <p>
+                        <h3><i class="icon-clock"></i> <span data-editable="contacto.hours.title" data-editable-type="text">Lorem Ipsum</span></h3>
+                        <p data-editable="contacto.hours.schedule" data-editable-type="text">
                             Lorem - Ipsum: 19:00 - 02:00<br>
                             Lorem - Ipsum: 19:00 - 03:30<br>
                             Lorem - Ipsum: Lorem
@@ -335,11 +336,11 @@
                 </div>
             </div>
             <div class="social-links">
-                <h3>Lorem Ipsum</h3>
+                <h3 data-editable="contacto.social.title" data-editable-type="text">Lorem Ipsum</h3>
                 <div class="social-icons">
-                    <a href="#" class="social-icon">Instagram</a>
-                    <a href="#" class="social-icon">Facebook</a>
-                    <a href="#" class="social-icon">Twitter</a>
+                    <a href="#" class="social-icon" data-editable="contacto.social.instagram" data-editable-type="link">Instagram</a>
+                    <a href="#" class="social-icon" data-editable="contacto.social.facebook" data-editable-type="link">Facebook</a>
+                    <a href="#" class="social-icon" data-editable="contacto.social.twitter" data-editable-type="link">Twitter</a>
                 </div>
             </div>
         </div>
@@ -348,10 +349,11 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 Hidden District. Lorem ipsum dolor sit amet.</p>
+            <p data-editable="footer.copyright" data-editable-type="text">&copy; 2024 Hidden District. Lorem ipsum dolor sit amet.</p>
         </div>
     </footer>
 
     <script src="script.js"></script>
+    <script src="admin.js"></script>
 </body>
 </html>

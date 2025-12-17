@@ -1,0 +1,342 @@
+/* Admin Panel Styles */
+
+/* Login Modal */
+.admin-login-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 10000;
+    justify-content: center;
+    align-items: center;
+}
+
+.admin-login-modal.active {
+    display: flex;
+}
+
+.admin-login-content {
+    background: #1a1a1a;
+    padding: 40px;
+    border-radius: 10px;
+    border: 2px solid #d4af37;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 10px 40px rgba(212, 175, 55, 0.3);
+}
+
+.admin-login-content h2 {
+    color: #d4af37;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 24px;
+}
+
+.admin-login-content p {
+    color: #999;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 14px;
+}
+
+.admin-login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.admin-login-form input {
+    padding: 15px;
+    background: #0a0a0a;
+    border: 1px solid #333;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+}
+
+.admin-login-form input:focus {
+    outline: none;
+    border-color: #d4af37;
+}
+
+.admin-login-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.admin-login-buttons button {
+    flex: 1;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.admin-btn-login {
+    background: #d4af37;
+    color: #0a0a0a;
+}
+
+.admin-btn-login:hover {
+    background: #f0c955;
+    transform: translateY(-2px);
+}
+
+.admin-btn-cancel {
+    background: #333;
+    color: white;
+}
+
+.admin-btn-cancel:hover {
+    background: #444;
+}
+
+.admin-error-message {
+    color: #ff4444;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 14px;
+    display: none;
+}
+
+.admin-error-message.show {
+    display: block;
+}
+
+/* Admin Mode Indicator */
+.admin-mode-indicator {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #d4af37;
+    color: #0a0a0a;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 20px rgba(212, 175, 55, 0.5);
+}
+
+.admin-mode-indicator.active {
+    display: flex;
+}
+
+.admin-logout-btn {
+    background: #0a0a0a;
+    color: #d4af37;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.admin-logout-btn:hover {
+    background: #1a1a1a;
+    transform: scale(1.05);
+}
+
+/* Edit Buttons */
+.admin-edit-btn {
+    display: none;
+    background: #d4af37;
+    color: #0a0a0a;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+    margin-left: 10px;
+    transition: all 0.3s ease;
+    vertical-align: middle;
+}
+
+.admin-mode .admin-edit-btn {
+    display: inline-block;
+}
+
+.admin-edit-btn:hover {
+    background: #f0c955;
+    transform: scale(1.1);
+}
+
+/* Editable Elements Highlight */
+.admin-mode [data-editable] {
+    position: relative;
+    outline: 2px dashed rgba(212, 175, 55, 0.3);
+    outline-offset: 4px;
+    transition: all 0.3s ease;
+}
+
+.admin-mode [data-editable]:hover {
+    outline-color: rgba(212, 175, 55, 0.6);
+    background: rgba(212, 175, 55, 0.05);
+}
+
+/* Edit Modal */
+.admin-edit-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 10001;
+    justify-content: center;
+    align-items: center;
+}
+
+.admin-edit-modal.active {
+    display: flex;
+}
+
+.admin-edit-content {
+    background: #1a1a1a;
+    padding: 40px;
+    border-radius: 10px;
+    border: 2px solid #d4af37;
+    max-width: 600px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 10px 40px rgba(212, 175, 55, 0.3);
+}
+
+.admin-edit-content h3 {
+    color: #d4af37;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.admin-edit-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.admin-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.admin-form-group label {
+    color: #d4af37;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.admin-form-group input,
+.admin-form-group textarea {
+    padding: 12px;
+    background: #0a0a0a;
+    border: 1px solid #333;
+    border-radius: 5px;
+    color: white;
+    font-size: 14px;
+    font-family: inherit;
+}
+
+.admin-form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.admin-form-group input:focus,
+.admin-form-group textarea:focus {
+    outline: none;
+    border-color: #d4af37;
+}
+
+.admin-edit-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.admin-edit-buttons button {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.admin-btn-save {
+    background: #d4af37;
+    color: #0a0a0a;
+}
+
+.admin-btn-save:hover {
+    background: #f0c955;
+}
+
+.admin-btn-cancel-edit {
+    background: #333;
+    color: white;
+}
+
+.admin-btn-cancel-edit:hover {
+    background: #444;
+}
+
+/* Success Message */
+.admin-success-message {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    background: #4CAF50;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 5px;
+    z-index: 10002;
+    display: none;
+    box-shadow: 0 4px 20px rgba(76, 175, 80, 0.5);
+}
+
+.admin-success-message.show {
+    display: block;
+    animation: slideInRight 0.3s ease;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(400px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .admin-login-content,
+    .admin-edit-content {
+        padding: 30px 20px;
+    }
+
+    .admin-mode-indicator {
+        top: 10px;
+        right: 10px;
+        padding: 8px 15px;
+        font-size: 12px;
+    }
+}
