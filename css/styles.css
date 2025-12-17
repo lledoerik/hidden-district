@@ -17,6 +17,10 @@
     --transition: all 0.3s ease;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: var(--font-secondary);
     background-color: var(--color-background);
@@ -148,6 +152,11 @@ i.icon-cocktail::before {
     align-items: center;
 }
 
+.logo img {
+    height: 70px;
+    width: auto;
+}
+
 .logo h1 {
     font-family: var(--font-primary);
     font-size: 1.8rem;
@@ -222,13 +231,11 @@ i.icon-cocktail::before {
     z-index: 2;
 }
 
-.hero-logo h2 {
-    font-family: var(--font-primary);
-    font-size: 5rem;
-    color: var(--color-primary);
-    letter-spacing: 10px;
+.hero-logo img {
+    max-width: 900px;
+    width: 95%;
+    height: auto;
     margin-bottom: 1rem;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
     animation: fadeInDown 1s ease;
 }
 
@@ -246,6 +253,14 @@ i.icon-cocktail::before {
     font-size: 2rem;
     color: var(--color-primary);
     animation: bounce 2s infinite;
+    cursor: pointer;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.scroll-indicator:hover {
+    color: var(--color-text);
+    transform: scale(1.2);
 }
 
 @keyframes fadeInDown {
