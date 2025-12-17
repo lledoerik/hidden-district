@@ -1,14 +1,49 @@
-# Hidden District - Web del Bar
+# 🍸 Hidden District - Web amb Edició Admin
 
-Pàgina web professional per al bar Hidden District amb disseny fosc i elegant.
+Pàgina web professional per al bar Hidden District amb sistema d'edició integrat i guardada al núvol amb Firebase.
 
-## Estructura
+## 🚀 Inici Ràpid
 
-- `index.html` - Pàgina principal amb totes les seccions
-- `styles.css` - Estils CSS amb tema fosc i icones SVG
-- `script.js` - JavaScript per interactivitat
+### Mode Admin
+- **Obrir panel admin**: `Ctrl + Shift + A`
+- **Contrasenya per defecte**: `hiddendistrict2024`
+- **⚠️ IMPORTANT**: Canvia la contrasenya abans de publicar (instruccions a FIREBASE-SETUP.md)
 
-## Seccions
+### Editar contingut
+1. Prem `Ctrl + Shift + A`
+2. Introdueix la contrasenya
+3. Fes clic als botons d'edició (✏️) que apareixen
+4. Edita el text i guarda
+5. Els canvis es guarden automàticament a Firebase!
+
+## 📋 Configuració Firebase
+
+**Els canvis NO es guardaran permanentment fins que configuris Firebase.**
+
+Segueix la guia pas a pas: **[FIREBASE-SETUP.md](FIREBASE-SETUP.md)**
+
+Només necessites:
+- ✅ 10 minuts
+- ✅ Un compte de Google (gratuït)
+- ✅ No cal servidor propi
+- ✅ Completament gratuït
+
+## 📁 Estructura del projecte
+
+```
+hidden-district/
+├── index.html              # Pàgina principal
+├── styles.css             # Estils generals
+├── admin.css              # Estils del mode admin
+├── script.js              # JavaScript general
+├── admin.js               # Sistema d'edició admin
+├── firebase-config.js     # ⚠️ Configuració Firebase (edita això!)
+├── content.json           # Contingut inicial
+├── FIREBASE-SETUP.md      # 📖 Guia de configuració
+└── README.md              # Aquest fitxer
+```
+
+## Seccions de la web
 
 1. **Hero** - Pàgina inicial amb logo
 2. **El Distrito** - Descripció del local
@@ -53,6 +88,25 @@ Substitueix tots els textos "Lorem ipsum" pel contingut real del bar.
 
 Canvia els URLs de les imatges de fons i afegeix fotos dels còctels als elements `.cocktail-image`.
 
-## Com veure la web
+## 🌐 Publicar la web
+
+Pots allotjar-ho gratuïtament a:
+
+- **GitHub Pages**: [Tutorial](https://pages.github.com/)
+- **Netlify**: [netlify.com](https://www.netlify.com/) (Recomanat - més fàcil)
+- **Vercel**: [vercel.com](https://vercel.com/)
+
+## 🔐 Seguretat
+
+- La contrasenya està encriptada amb SHA-256
+- Firebase té regles de seguretat configurades
+- Només tu pots editar el contingut
+- Tothom pot veure la web
+
+## Com veure la web localment
 
 Obre `index.html` directament al navegador o utilitza un servidor local.
+
+---
+
+**Creat amb ❤️ per Hidden District**

@@ -10,6 +10,8 @@ class AdminSystem {
         // Contrasenya per defecte: "hiddendistrict2024"
         this.passwordHash = "b01bd5d38ff37127e4ef69842926163b4fedfc5db0dac5ab3bab10d963dc8265";
         this.content = null;
+        this.db = null;
+        this.firebaseInitialized = false;
         this.init();
     }
 
@@ -19,8 +21,43 @@ class AdminSystem {
         this.createAdminIndicator();
         this.createSuccessMessage();
         this.setupKeyboardShortcut();
-        this.loadContent();
+        this.initFirebase();
         this.checkAuthStatus();
+    }
+
+    // Initialize Firebase
+    async initFirebase() {
+        try {
+            // Check if Firebase is loaded
+            if (typeof firebase === 'undefined') {
+                console.error('Firebase no està carregat. Assegura\'t que els scripts de Firebase estan a index.html');
+                this.loadContent(); // Fallback to localStorage
+                return;
+            }
+
+            // Check if config exists
+            if (!window.firebaseConfig || window.firebaseConfig.apiKey === 'SUBSTITUEIX_AMB_LA_TEVA_API_KEY') {
+                console.warn('Firebase no està configurat. Usant localStorage com a fallback.');
+                console.warn('Segueix la guia FIREBASE-SETUP.md per configurar Firebase');
+                this.loadContent(); // Fallback to localStorage
+                return;
+            }
+
+            // Initialize Firebase
+            firebase.initializeApp(window.firebaseConfig);
+            this.db = firebase.firestore();
+            this.firebaseInitialized = true;
+
+            console.log('✅ Firebase inicialitzat correctament');
+
+            // Load content from Firebase
+            await this.loadContentFromFirebase();
+
+        } catch (error) {
+            console.error('Error inicialitzant Firebase:', error);
+            console.warn('Usant localStorage com a fallback');
+            this.loadContent(); // Fallback to localStorage
+        }
     }
 
     // Hash password using SHA-256
@@ -300,13 +337,13 @@ class AdminSystem {
     }
 
     // Save edit
-    saveEdit() {
+    async saveEdit() {
         const form = document.getElementById('adminEditForm');
         const path = form.dataset.path;
         const newValue = document.getElementById('editValue').value;
 
         this.setValueByPath(path, newValue);
-        this.saveContent();
+        await this.saveContentToFirebase();
         this.updateDOM();
         this.hideEditModal();
         this.showSuccessMessage();
@@ -321,11 +358,54 @@ class AdminSystem {
         }, 3000);
     }
 
-    // Load content from JSON or localStorage
+    // Load content from Firebase
+    async loadContentFromFirebase() {
+        try {
+            const doc = await this.db.collection('website').doc('content').get();
+
+            if (doc.exists) {
+                this.content = doc.data();
+                console.log('✅ Contingut carregat des de Firebase');
+                this.updateDOM();
+            } else {
+                // If no content in Firebase, load from content.json and save to Firebase
+                console.log('ℹ️ No hi ha contingut a Firebase. Carregant des de content.json...');
+                await this.loadContentFromJSON();
+            }
+        } catch (error) {
+            console.error('Error carregant des de Firebase:', error);
+            this.loadContent(); // Fallback to localStorage
+        }
+    }
+
+    // Load content from content.json (initial setup)
+    async loadContentFromJSON() {
+        try {
+            const response = await fetch('content.json');
+            const data = await response.json();
+            this.content = data;
+
+            // Save to Firebase for future use
+            if (this.firebaseInitialized) {
+                await this.saveContentToFirebase();
+                console.log('✅ Contingut inicial guardat a Firebase');
+            }
+
+            this.updateDOM();
+        } catch (error) {
+            console.error('Error loading content.json:', error);
+            // Initialize with empty content structure
+            this.content = this.getDefaultContent();
+            this.updateDOM();
+        }
+    }
+
+    // Load content from localStorage (fallback)
     loadContent() {
         const savedContent = localStorage.getItem('hiddenDistrictContent');
         if (savedContent) {
             this.content = JSON.parse(savedContent);
+            this.updateDOM();
         } else {
             // Load from content.json
             fetch('content.json')
@@ -336,13 +416,90 @@ class AdminSystem {
                 })
                 .catch(error => {
                     console.error('Error loading content:', error);
+                    this.content = this.getDefaultContent();
+                    this.updateDOM();
                 });
         }
     }
 
-    // Save content to localStorage
-    saveContent() {
+    // Save content to Firebase
+    async saveContentToFirebase() {
+        if (!this.firebaseInitialized) {
+            console.warn('Firebase no està inicialitzat. Guardant a localStorage...');
+            this.saveContentToLocalStorage();
+            return;
+        }
+
+        try {
+            await this.db.collection('website').doc('content').set(this.content);
+            console.log('✅ Contingut guardat a Firebase');
+
+            // Also save to localStorage as backup
+            this.saveContentToLocalStorage();
+        } catch (error) {
+            console.error('Error guardant a Firebase:', error);
+            // Fallback to localStorage
+            this.saveContentToLocalStorage();
+        }
+    }
+
+    // Save content to localStorage (fallback/backup)
+    saveContentToLocalStorage() {
         localStorage.setItem('hiddenDistrictContent', JSON.stringify(this.content));
+        console.log('💾 Backup guardat a localStorage');
+    }
+
+    // Get default content structure
+    getDefaultContent() {
+        return {
+            hero: {
+                title: "HIDDEN DISTRICT",
+                tagline: "COCTELERÍA EVOLUTIVA"
+            },
+            distrito: {
+                title: "El Distrito",
+                intro: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+                paragraph1: "Ut enim ad minim veniam, quis nostrud exercitation",
+                paragraph2: "Excepteur sint occaecat cupidatat non proident"
+            },
+            cocteles: {
+                title: "Cócteles De Autor",
+                subtitle: "Lorem ipsum dolor sit amet"
+            },
+            eventos: {
+                title: "Eventos",
+                subtitle: "Lorem ipsum dolor sit amet"
+            },
+            eventosPrivados: {
+                title: "Eventos Privados",
+                subtitle: "Lorem ipsum dolor sit amet",
+                mainTitle: "Lorem Ipsum Dolor",
+                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+            },
+            contacto: {
+                title: "Contacto",
+                address: {
+                    title: "Lorem Ipsum",
+                    line1: "Lorem ipsum, 123",
+                    line2: "28001 Lorem, Ipsum"
+                },
+                phone: "+34 123 456 789",
+                email: "lorem@ipsum.com",
+                hours: {
+                    title: "Lorem Ipsum",
+                    schedule: "Lorem - Ipsum: 19:00 - 02:00"
+                },
+                social: {
+                    title: "Lorem Ipsum",
+                    instagram: "#",
+                    facebook: "#",
+                    twitter: "#"
+                }
+            },
+            footer: {
+                copyright: "© 2024 Hidden District. Lorem ipsum dolor sit amet."
+            }
+        };
     }
 
     // Update DOM with current content
@@ -391,6 +548,16 @@ class AdminSystem {
         link.href = url;
         link.download = 'content-backup.json';
         link.click();
+    }
+
+    // Sync localStorage content to Firebase (útil per migrar dades antigues)
+    async syncLocalStorageToFirebase() {
+        const savedContent = localStorage.getItem('hiddenDistrictContent');
+        if (savedContent && this.firebaseInitialized) {
+            this.content = JSON.parse(savedContent);
+            await this.saveContentToFirebase();
+            console.log('✅ Contingut de localStorage sincronitzat amb Firebase');
+        }
     }
 }
 
