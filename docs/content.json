@@ -33,37 +33,37 @@
       {
         "name": "Lorem Ipsum",
         "ingredients": "Lorem ipsum dolor sit amet",
-        "price": "12€",
+        "price": "67€",
         "image": ""
       },
       {
         "name": "Lorem Ipsum",
         "ingredients": "Lorem ipsum dolor sit amet",
-        "price": "14€",
+        "price": "67€",
         "image": ""
       },
       {
         "name": "Lorem Ipsum",
         "ingredients": "Lorem ipsum dolor sit amet",
-        "price": "13€",
+        "price": "67€",
         "image": ""
       },
       {
         "name": "Lorem Ipsum",
         "ingredients": "Lorem ipsum dolor sit amet",
-        "price": "15€",
+        "price": "67€",
         "image": ""
       },
       {
         "name": "Lorem Ipsum",
         "ingredients": "Lorem ipsum dolor sit amet",
-        "price": "13€",
+        "price": "67€",
         "image": ""
       },
       {
         "name": "Lorem Ipsum",
         "ingredients": "Lorem ipsum dolor sit amet",
-        "price": "16€",
+        "price": "67€",
         "image": ""
       }
     ]
@@ -73,25 +73,25 @@
       {
         "name": "Lorem Ipsum",
         "ingredients": "Lorem ipsum dolor sit amet",
-        "price": "6€",
+        "price": "67€",
         "image": ""
       },
       {
         "name": "Lorem Ipsum",
         "ingredients": "Lorem ipsum dolor sit amet",
-        "price": "7€",
+        "price": "67€",
         "image": ""
       },
       {
         "name": "Lorem Ipsum",
         "ingredients": "Lorem ipsum dolor sit amet",
-        "price": "8€",
+        "price": "67€",
         "image": ""
       },
       {
         "name": "Lorem Ipsum",
         "ingredients": "Lorem ipsum dolor sit amet",
-        "price": "7€",
+        "price": "67€",
         "image": ""
       }
     ]
@@ -101,27 +101,27 @@
     "subtitle": "Lorem ipsum dolor sit amet consectetur",
     "items": [
       {
-        "day": "15",
-        "month": "ENE",
+        "day": "67",
+        "month": "FEB",
         "title": "Lorem Ipsum",
         "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit",
-        "time": "22:00h",
+        "time": "06:07h",
         "type": "Lorem ipsum"
       },
       {
-        "day": "20",
-        "month": "ENE",
+        "day": "67",
+        "month": "FEB",
         "title": "Lorem Ipsum",
         "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit",
-        "time": "19:00-21:00h",
+        "time": "18:00-07:00h",
         "type": "Lorem ipsum"
       },
       {
-        "day": "25",
-        "month": "ENE",
+        "day": "67",
+        "month": "FEB",
         "title": "Lorem Ipsum",
         "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit",
-        "time": "23:00h",
+        "time": "06:07h",
         "type": "Lorem ipsum"
       }
     ]
@@ -140,7 +140,7 @@
       "Lorem ipsum dolor"
     ],
     "pricing": {
-      "title": "Lorem ipsum 35€",
+      "title": "Lorem ipsum 67€",
       "description": "Lorem ipsum dolor sit amet"
     }
   },
@@ -148,18 +148,22 @@
     "title": "Contacto",
     "address": {
       "title": "Lorem Ipsum",
-      "line1": "Lorem ipsum, 123",
-      "line2": "28001 Lorem, Ipsum"
+      "line1": "Lorem ipsum, 67",
+      "line2": "06767 Lorem, Ipsum"
     },
-    "phone": "+34 123 456 789",
+    "phone": "+67 6767676767",
     "email": "lorem@ipsum.com",
     "hours": {
-      "title": "Lorem Ipsum",
-      "schedule": [
-        "Lorem - Ipsum: 19:00 - 02:00",
-        "Lorem - Ipsum: 19:00 - 03:30",
-        "Lorem - Ipsum: Lorem"
-      ]
+      "title": "Horari",
+      "schedule": {
+        "dilluns": "Tancat",
+        "dimarts": "Tancat",
+        "dimecres": "18:00 - 07:00",
+        "dijous": "18:00 - 07:00",
+        "divendres": "18:00 - 07:00",
+        "dissabte": "18:00 - 07:00",
+        "diumenge": "18:00 - 07:00"
+      }
     },
     "map": {
       "title": "Lorem Ipsum Maps",
@@ -174,6 +178,6 @@
     }
   },
   "footer": {
-    "copyright": "2024 Hidden District. Lorem ipsum dolor sit amet."
+    "copyright": "6767 Hidden District. Lorem ipsum dolor sit amet."
   }
 }

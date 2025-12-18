@@ -1,4 +1,5 @@
 /* Admin Panel Styles */
+/* Uses CSS variables from styles.css */
 
 /* Login Modal */
 .admin-login-modal {
@@ -19,24 +20,24 @@
 }
 
 .admin-login-content {
-    background: #1a1a1a;
+    background: var(--color-secondary);
     padding: 40px;
     border-radius: 10px;
-    border: 2px solid #d4af37;
+    border: 2px solid var(--color-primary);
     max-width: 400px;
     width: 90%;
-    box-shadow: 0 10px 40px rgba(212, 175, 55, 0.3);
+    box-shadow: 0 10px 40px rgba(0, 191, 99, 0.3);
 }
 
 .admin-login-content h2 {
-    color: #d4af37;
+    color: var(--color-primary);
     margin-bottom: 10px;
     text-align: center;
     font-size: 24px;
 }
 
 .admin-login-content p {
-    color: #999;
+    color: var(--color-text-dim);
     text-align: center;
     margin-bottom: 30px;
     font-size: 14px;
@@ -50,7 +51,7 @@
 
 .admin-login-form input {
     padding: 15px;
-    background: #0a0a0a;
+    background: var(--color-background);
     border: 1px solid #333;
     border-radius: 5px;
     color: white;
@@ -59,7 +60,7 @@
 
 .admin-login-form input:focus {
     outline: none;
-    border-color: #d4af37;
+    border-color: var(--color-primary);
 }
 
 .admin-login-buttons {
@@ -79,12 +80,12 @@
 }
 
 .admin-btn-login {
-    background: #d4af37;
-    color: #0a0a0a;
+    background: var(--color-primary);
+    color: var(--color-background);
 }
 
 .admin-btn-login:hover {
-    background: #f0c955;
+    background: var(--color-primary-light);
     transform: translateY(-2px);
 }
 
@@ -114,8 +115,8 @@
     position: fixed;
     top: 20px;
     right: 20px;
-    background: #d4af37;
-    color: #0a0a0a;
+    background: var(--color-primary);
+    color: var(--color-background);
     padding: 10px 20px;
     border-radius: 30px;
     font-weight: bold;
@@ -123,7 +124,7 @@
     display: none;
     align-items: center;
     gap: 10px;
-    box-shadow: 0 4px 20px rgba(212, 175, 55, 0.5);
+    box-shadow: 0 4px 20px rgba(0, 191, 99, 0.5);
 }
 
 .admin-mode-indicator.active {
@@ -131,8 +132,8 @@
 }
 
 .admin-logout-btn {
-    background: #0a0a0a;
-    color: #d4af37;
+    background: var(--color-background);
+    color: var(--color-primary);
     border: none;
     padding: 5px 15px;
     border-radius: 15px;
@@ -143,15 +144,15 @@
 }
 
 .admin-logout-btn:hover {
-    background: #1a1a1a;
+    background: var(--color-secondary);
     transform: scale(1.05);
 }
 
 /* Edit Buttons */
 .admin-edit-btn {
     display: none;
-    background: #d4af37;
-    color: #0a0a0a;
+    background: var(--color-primary);
+    color: var(--color-background);
     border: none;
     padding: 5px 10px;
     border-radius: 5px;
@@ -168,21 +169,21 @@
 }
 
 .admin-edit-btn:hover {
-    background: #f0c955;
+    background: var(--color-primary-light);
     transform: scale(1.1);
 }
 
 /* Editable Elements Highlight */
 .admin-mode [data-editable] {
     position: relative;
-    outline: 2px dashed rgba(212, 175, 55, 0.3);
+    outline: 2px dashed rgba(0, 191, 99, 0.3);
     outline-offset: 4px;
     transition: all 0.3s ease;
 }
 
 .admin-mode [data-editable]:hover {
-    outline-color: rgba(212, 175, 55, 0.6);
-    background: rgba(212, 175, 55, 0.05);
+    outline-color: rgba(0, 191, 99, 0.6);
+    background: rgba(0, 191, 99, 0.05);
 }
 
 /* Edit Modal */
@@ -204,19 +205,19 @@
 }
 
 .admin-edit-content {
-    background: #1a1a1a;
+    background: var(--color-secondary);
     padding: 40px;
     border-radius: 10px;
-    border: 2px solid #d4af37;
+    border: 2px solid var(--color-primary);
     max-width: 600px;
     width: 90%;
     max-height: 80vh;
     overflow-y: auto;
-    box-shadow: 0 10px 40px rgba(212, 175, 55, 0.3);
+    box-shadow: 0 10px 40px rgba(0, 191, 99, 0.3);
 }
 
 .admin-edit-content h3 {
-    color: #d4af37;
+    color: var(--color-primary);
     margin-bottom: 20px;
     text-align: center;
 }
@@ -234,15 +235,16 @@
 }
 
 .admin-form-group label {
-    color: #d4af37;
+    color: var(--color-primary);
     font-weight: bold;
     font-size: 14px;
 }
 
 .admin-form-group input,
-.admin-form-group textarea {
+.admin-form-group textarea,
+.admin-form-group select {
     padding: 12px;
-    background: #0a0a0a;
+    background: var(--color-background);
     border: 1px solid #333;
     border-radius: 5px;
     color: white;
@@ -256,9 +258,10 @@
 }
 
 .admin-form-group input:focus,
-.admin-form-group textarea:focus {
+.admin-form-group textarea:focus,
+.admin-form-group select:focus {
     outline: none;
-    border-color: #d4af37;
+    border-color: var(--color-primary);
 }
 
 .admin-edit-buttons {
@@ -279,12 +282,12 @@
 }
 
 .admin-btn-save {
-    background: #d4af37;
-    color: #0a0a0a;
+    background: var(--color-primary);
+    color: var(--color-background);
 }
 
 .admin-btn-save:hover {
-    background: #f0c955;
+    background: var(--color-primary-light);
 }
 
 .admin-btn-cancel-edit {
@@ -301,16 +304,37 @@
     position: fixed;
     top: 80px;
     right: 20px;
-    background: #4CAF50;
+    background: var(--color-primary);
+    color: var(--color-background);
+    padding: 15px 25px;
+    border-radius: 5px;
+    z-index: 10002;
+    display: none;
+    font-weight: bold;
+    box-shadow: 0 4px 20px rgba(0, 191, 99, 0.5);
+}
+
+.admin-success-message.show {
+    display: block;
+    animation: slideInRight 0.3s ease;
+}
+
+/* Error Toast */
+.admin-error-toast {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    background: #dc3545;
     color: white;
     padding: 15px 25px;
     border-radius: 5px;
     z-index: 10002;
     display: none;
-    box-shadow: 0 4px 20px rgba(76, 175, 80, 0.5);
+    font-weight: bold;
+    box-shadow: 0 4px 20px rgba(220, 53, 69, 0.5);
 }
 
-.admin-success-message.show {
+.admin-error-toast.show {
     display: block;
     animation: slideInRight 0.3s ease;
 }

@@ -20,6 +20,7 @@ class AdminSystem {
         this.createEditModal();
         this.createAdminIndicator();
         this.createSuccessMessage();
+        this.createErrorMessage();
         this.setupKeyboardShortcut();
         this.initFirebase();
         this.checkAuthStatus();
@@ -30,16 +31,15 @@ class AdminSystem {
         try {
             // Check if Firebase is loaded
             if (typeof firebase === 'undefined') {
-                console.error('Firebase no està carregat. Assegura\'t que els scripts de Firebase estan a index.html');
-                this.loadContent(); // Fallback to localStorage
+                console.error('❌ Firebase no està carregat. Assegura\'t que els scripts de Firebase estan a index.html');
+                this.showErrorMessage('Error: Firebase no carregat');
                 return;
             }
 
             // Check if config exists
             if (!window.firebaseConfig || window.firebaseConfig.apiKey === 'SUBSTITUEIX_AMB_LA_TEVA_API_KEY') {
-                console.warn('Firebase no està configurat. Usant localStorage com a fallback.');
-                console.warn('Segueix la guia FIREBASE-SETUP.md per configurar Firebase');
-                this.loadContent(); // Fallback to localStorage
+                console.error('❌ Firebase no està configurat. Segueix la guia FIREBASE-SETUP.md');
+                this.showErrorMessage('Error: Firebase no configurat');
                 return;
             }
 
@@ -54,9 +54,8 @@ class AdminSystem {
             await this.loadContentFromFirebase();
 
         } catch (error) {
-            console.error('Error inicialitzant Firebase:', error);
-            console.warn('Usant localStorage com a fallback');
-            this.loadContent(); // Fallback to localStorage
+            console.error('❌ Error inicialitzant Firebase:', error);
+            this.showErrorMessage('Error connectant amb Firebase');
         }
     }
 
@@ -200,8 +199,20 @@ class AdminSystem {
         document.body.appendChild(message);
     }
 
+    // Create error message
+    createErrorMessage() {
+        const message = document.createElement('div');
+        message.className = 'admin-error-toast';
+        message.id = 'adminErrorToast';
+        document.body.appendChild(message);
+    }
+
     // Show/hide modals
     showLoginModal() {
+        if (!this.firebaseInitialized) {
+            this.showErrorMessage('Firebase no està configurat. No es pot accedir al mode admin.');
+            return;
+        }
         document.getElementById('adminLoginModal').classList.add('active');
         document.getElementById('adminPassword').focus();
         document.getElementById('adminErrorMsg').classList.remove('show');
@@ -228,7 +239,7 @@ class AdminSystem {
 
         if (hash === this.passwordHash) {
             this.isAuthenticated = true;
-            localStorage.setItem('adminAuth', 'true');
+            sessionStorage.setItem('adminAuth', 'true');
             this.hideLoginModal();
             this.activateAdminMode();
         } else {
@@ -242,14 +253,14 @@ class AdminSystem {
     // Logout
     logout() {
         this.isAuthenticated = false;
-        localStorage.removeItem('adminAuth');
+        sessionStorage.removeItem('adminAuth');
         this.deactivateAdminMode();
     }
 
     // Check auth status on page load
     checkAuthStatus() {
-        const isAuth = localStorage.getItem('adminAuth');
-        if (isAuth === 'true') {
+        const isAuth = sessionStorage.getItem('adminAuth');
+        if (isAuth === 'true' && this.firebaseInitialized) {
             this.isAuthenticated = true;
             this.activateAdminMode();
         }
@@ -326,27 +337,156 @@ class AdminSystem {
                     <input type="text" id="editValue" value="${value || ''}" placeholder="https://...">
                 </div>
             `;
+        } else if (type === 'menu-item') {
+            // Còctels i Tapas
+            const item = value || { name: '', ingredients: '', price: '', image: '' };
+            fieldsContainer.innerHTML = `
+                <div class="admin-form-group">
+                    <label>Nom:</label>
+                    <input type="text" id="editName" value="${item.name || ''}" placeholder="Nom del còctel/tapa">
+                </div>
+                <div class="admin-form-group">
+                    <label>Ingredients:</label>
+                    <textarea id="editIngredients" rows="2" placeholder="Descripció o ingredients">${item.ingredients || ''}</textarea>
+                </div>
+                <div class="admin-form-group">
+                    <label>Preu:</label>
+                    <input type="text" id="editPrice" value="${item.price || ''}" placeholder="12€">
+                </div>
+                <div class="admin-form-group">
+                    <label>URL Imatge (opcional):</label>
+                    <input type="text" id="editImage" value="${item.image || ''}" placeholder="https://...">
+                </div>
+            `;
+        } else if (type === 'event') {
+            // Esdeveniments
+            const item = value || { day: '', month: '', title: '', description: '', time: '', type: '' };
+            fieldsContainer.innerHTML = `
+                <div class="admin-form-group">
+                    <label>Dia (número):</label>
+                    <input type="text" id="editDay" value="${item.day || ''}" placeholder="15">
+                </div>
+                <div class="admin-form-group">
+                    <label>Mes (abreviatura):</label>
+                    <input type="text" id="editMonth" value="${item.month || ''}" placeholder="FEB">
+                </div>
+                <div class="admin-form-group">
+                    <label>Títol:</label>
+                    <input type="text" id="editTitle" value="${item.title || ''}" placeholder="Nom de l'event">
+                </div>
+                <div class="admin-form-group">
+                    <label>Descripció:</label>
+                    <textarea id="editDescription" rows="2" placeholder="Descripció de l'event">${item.description || ''}</textarea>
+                </div>
+                <div class="admin-form-group">
+                    <label>Hora:</label>
+                    <input type="text" id="editTime" value="${item.time || ''}" placeholder="22:00h o 18:00-02:00h">
+                </div>
+                <div class="admin-form-group">
+                    <label>Tipus:</label>
+                    <input type="text" id="editType" value="${item.type || ''}" placeholder="DJ Session, Concert, etc.">
+                </div>
+            `;
+        } else if (type === 'schedule') {
+            // Horari
+            const schedule = value?.schedule || {};
+            fieldsContainer.innerHTML = `
+                <div class="admin-form-group">
+                    <label>Dilluns:</label>
+                    <input type="text" id="editDilluns" value="${schedule.dilluns || 'Tancat'}" placeholder="Tancat o 18:00 - 02:00">
+                </div>
+                <div class="admin-form-group">
+                    <label>Dimarts:</label>
+                    <input type="text" id="editDimarts" value="${schedule.dimarts || 'Tancat'}" placeholder="Tancat o 18:00 - 02:00">
+                </div>
+                <div class="admin-form-group">
+                    <label>Dimecres:</label>
+                    <input type="text" id="editDimecres" value="${schedule.dimecres || ''}" placeholder="18:00 - 02:00">
+                </div>
+                <div class="admin-form-group">
+                    <label>Dijous:</label>
+                    <input type="text" id="editDijous" value="${schedule.dijous || ''}" placeholder="18:00 - 02:00">
+                </div>
+                <div class="admin-form-group">
+                    <label>Divendres:</label>
+                    <input type="text" id="editDivendres" value="${schedule.divendres || ''}" placeholder="18:00 - 02:00">
+                </div>
+                <div class="admin-form-group">
+                    <label>Dissabte:</label>
+                    <input type="text" id="editDissabte" value="${schedule.dissabte || ''}" placeholder="18:00 - 02:00">
+                </div>
+                <div class="admin-form-group">
+                    <label>Diumenge:</label>
+                    <input type="text" id="editDiumenge" value="${schedule.diumenge || ''}" placeholder="18:00 - 02:00">
+                </div>
+            `;
         }
 
-        // Store the path for saving
+        // Store the path and type for saving
         document.getElementById('adminEditForm').dataset.path = path;
+        document.getElementById('adminEditForm').dataset.type = type;
         document.getElementById('adminEditForm').dataset.element = element.id || '';
 
         this.showEditModal();
-        document.getElementById('editValue').focus();
+
+        // Focus first input
+        const firstInput = fieldsContainer.querySelector('input, textarea');
+        if (firstInput) firstInput.focus();
     }
 
     // Save edit
     async saveEdit() {
+        if (!this.firebaseInitialized) {
+            this.showErrorMessage('No es pot guardar: Firebase no està configurat');
+            return;
+        }
+
         const form = document.getElementById('adminEditForm');
         const path = form.dataset.path;
-        const newValue = document.getElementById('editValue').value;
+        const type = form.dataset.type || 'text';
 
-        this.setValueByPath(path, newValue);
-        await this.saveContentToFirebase();
-        this.updateDOM();
-        this.hideEditModal();
-        this.showSuccessMessage();
+        let newValue;
+
+        if (type === 'text' || type === 'image' || type === 'link') {
+            newValue = document.getElementById('editValue').value;
+            this.setValueByPath(path, newValue);
+        } else if (type === 'menu-item') {
+            newValue = {
+                name: document.getElementById('editName').value,
+                ingredients: document.getElementById('editIngredients').value,
+                price: document.getElementById('editPrice').value,
+                image: document.getElementById('editImage').value
+            };
+            this.setValueByPath(path, newValue);
+        } else if (type === 'event') {
+            newValue = {
+                day: document.getElementById('editDay').value,
+                month: document.getElementById('editMonth').value,
+                title: document.getElementById('editTitle').value,
+                description: document.getElementById('editDescription').value,
+                time: document.getElementById('editTime').value,
+                type: document.getElementById('editType').value
+            };
+            this.setValueByPath(path, newValue);
+        } else if (type === 'schedule') {
+            const schedule = {
+                dilluns: document.getElementById('editDilluns').value,
+                dimarts: document.getElementById('editDimarts').value,
+                dimecres: document.getElementById('editDimecres').value,
+                dijous: document.getElementById('editDijous').value,
+                divendres: document.getElementById('editDivendres').value,
+                dissabte: document.getElementById('editDissabte').value,
+                diumenge: document.getElementById('editDiumenge').value
+            };
+            this.setValueByPath(path + '.schedule', schedule);
+        }
+
+        const saved = await this.saveContentToFirebase();
+        if (saved) {
+            this.updateDOM();
+            this.hideEditModal();
+            this.showSuccessMessage();
+        }
     }
 
     // Show success message
@@ -356,6 +496,16 @@ class AdminSystem {
         setTimeout(() => {
             msg.classList.remove('show');
         }, 3000);
+    }
+
+    // Show error message
+    showErrorMessage(text) {
+        const msg = document.getElementById('adminErrorToast');
+        msg.textContent = text;
+        msg.classList.add('show');
+        setTimeout(() => {
+            msg.classList.remove('show');
+        }, 5000);
     }
 
     // Load content from Firebase
@@ -373,15 +523,15 @@ class AdminSystem {
                 await this.loadContentFromJSON();
             }
         } catch (error) {
-            console.error('Error carregant des de Firebase:', error);
-            this.loadContent(); // Fallback to localStorage
+            console.error('❌ Error carregant des de Firebase:', error);
+            this.showErrorMessage('Error carregant contingut de Firebase');
         }
     }
 
     // Load content from content.json (initial setup)
     async loadContentFromJSON() {
         try {
-            const response = await fetch('content.json');
+            const response = await fetch('docs/content.json');
             const data = await response.json();
             this.content = data;
 
@@ -393,113 +543,27 @@ class AdminSystem {
 
             this.updateDOM();
         } catch (error) {
-            console.error('Error loading content.json:', error);
-            // Initialize with empty content structure
-            this.content = this.getDefaultContent();
-            this.updateDOM();
-        }
-    }
-
-    // Load content from localStorage (fallback)
-    loadContent() {
-        const savedContent = localStorage.getItem('hiddenDistrictContent');
-        if (savedContent) {
-            this.content = JSON.parse(savedContent);
-            this.updateDOM();
-        } else {
-            // Load from content.json
-            fetch('content.json')
-                .then(response => response.json())
-                .then(data => {
-                    this.content = data;
-                    this.updateDOM();
-                })
-                .catch(error => {
-                    console.error('Error loading content:', error);
-                    this.content = this.getDefaultContent();
-                    this.updateDOM();
-                });
+            console.error('❌ Error loading content.json:', error);
+            this.showErrorMessage('Error carregant contingut inicial');
         }
     }
 
     // Save content to Firebase
     async saveContentToFirebase() {
         if (!this.firebaseInitialized) {
-            console.warn('Firebase no està inicialitzat. Guardant a localStorage...');
-            this.saveContentToLocalStorage();
-            return;
+            this.showErrorMessage('Firebase no està configurat');
+            return false;
         }
 
         try {
             await this.db.collection('website').doc('content').set(this.content);
             console.log('✅ Contingut guardat a Firebase');
-
-            // Also save to localStorage as backup
-            this.saveContentToLocalStorage();
+            return true;
         } catch (error) {
-            console.error('Error guardant a Firebase:', error);
-            // Fallback to localStorage
-            this.saveContentToLocalStorage();
+            console.error('❌ Error guardant a Firebase:', error);
+            this.showErrorMessage('Error guardant canvis a Firebase');
+            return false;
         }
-    }
-
-    // Save content to localStorage (fallback/backup)
-    saveContentToLocalStorage() {
-        localStorage.setItem('hiddenDistrictContent', JSON.stringify(this.content));
-        console.log('💾 Backup guardat a localStorage');
-    }
-
-    // Get default content structure
-    getDefaultContent() {
-        return {
-            hero: {
-                title: "HIDDEN DISTRICT",
-                tagline: "COCTELERÍA EVOLUTIVA"
-            },
-            distrito: {
-                title: "El Distrito",
-                intro: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-                paragraph1: "Ut enim ad minim veniam, quis nostrud exercitation",
-                paragraph2: "Excepteur sint occaecat cupidatat non proident"
-            },
-            cocteles: {
-                title: "Cócteles De Autor",
-                subtitle: "Lorem ipsum dolor sit amet"
-            },
-            eventos: {
-                title: "Eventos",
-                subtitle: "Lorem ipsum dolor sit amet"
-            },
-            eventosPrivados: {
-                title: "Eventos Privados",
-                subtitle: "Lorem ipsum dolor sit amet",
-                mainTitle: "Lorem Ipsum Dolor",
-                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
-            },
-            contacto: {
-                title: "Contacto",
-                address: {
-                    title: "Lorem Ipsum",
-                    line1: "Lorem ipsum, 123",
-                    line2: "28001 Lorem, Ipsum"
-                },
-                phone: "+34 123 456 789",
-                email: "lorem@ipsum.com",
-                hours: {
-                    title: "Lorem Ipsum",
-                    schedule: "Lorem - Ipsum: 19:00 - 02:00"
-                },
-                social: {
-                    title: "Lorem Ipsum",
-                    instagram: "#",
-                    facebook: "#",
-                    twitter: "#"
-                }
-            },
-            footer: {
-                copyright: "© 2024 Hidden District. Lorem ipsum dolor sit amet."
-            }
-        };
     }
 
     // Update DOM with current content
@@ -511,16 +575,67 @@ class AdminSystem {
         editables.forEach(element => {
             const path = element.dataset.editable;
             const value = this.getValueByPath(path);
+            const type = element.dataset.editableType || 'text';
 
             if (value !== undefined && value !== null) {
-                const type = element.dataset.editableType || 'text';
-
                 if (type === 'text') {
                     element.textContent = value;
                 } else if (type === 'image') {
                     element.src = value;
                 } else if (type === 'link') {
                     element.href = value;
+                } else if (type === 'menu-item') {
+                    // Update cocktail/tapa card
+                    const nameEl = element.querySelector('[data-field="name"]');
+                    const ingredientsEl = element.querySelector('[data-field="ingredients"]');
+                    const priceEl = element.querySelector('[data-field="price"]');
+                    const imageEl = element.querySelector('[data-field="image"]');
+
+                    if (nameEl) nameEl.textContent = value.name || '';
+                    if (ingredientsEl) ingredientsEl.textContent = value.ingredients || '';
+                    if (priceEl) priceEl.textContent = value.price || '';
+                    if (imageEl && value.image) {
+                        imageEl.style.backgroundImage = `url(${value.image})`;
+                        imageEl.style.backgroundSize = 'cover';
+                        imageEl.style.backgroundPosition = 'center';
+                    }
+                } else if (type === 'event') {
+                    // Update event card
+                    const dayEl = element.querySelector('[data-field="day"]');
+                    const monthEl = element.querySelector('[data-field="month"]');
+                    const titleEl = element.querySelector('[data-field="title"]');
+                    const descriptionEl = element.querySelector('[data-field="description"]');
+                    const timeEl = element.querySelector('[data-field="time"]');
+                    const typeEl = element.querySelector('[data-field="type"]');
+
+                    if (dayEl) dayEl.textContent = value.day || '';
+                    if (monthEl) monthEl.textContent = value.month || '';
+                    if (titleEl) titleEl.textContent = value.title || '';
+                    if (descriptionEl) descriptionEl.textContent = value.description || '';
+                    if (timeEl) timeEl.textContent = value.time || '';
+                    if (typeEl) typeEl.textContent = value.type || '';
+                } else if (type === 'schedule') {
+                    // Update schedule grid
+                    const schedule = value.schedule || {};
+                    const days = ['dilluns', 'dimarts', 'dimecres', 'dijous', 'divendres', 'dissabte', 'diumenge'];
+
+                    days.forEach(day => {
+                        const hoursEl = element.querySelector(`[data-field="${day}"]`);
+                        const rowEl = element.querySelector(`[data-day="${day}"]`);
+
+                        if (hoursEl && schedule[day]) {
+                            hoursEl.textContent = schedule[day];
+                        }
+
+                        // Update tancat class
+                        if (rowEl) {
+                            if (schedule[day] && schedule[day].toLowerCase() === 'tancat') {
+                                rowEl.classList.add('tancat');
+                            } else {
+                                rowEl.classList.remove('tancat');
+                            }
+                        }
+                    });
                 }
             }
         });
@@ -549,23 +664,11 @@ class AdminSystem {
         link.download = 'content-backup.json';
         link.click();
     }
-
-    // Sync localStorage content to Firebase (útil per migrar dades antigues)
-    async syncLocalStorageToFirebase() {
-        const savedContent = localStorage.getItem('hiddenDistrictContent');
-        if (savedContent && this.firebaseInitialized) {
-            this.content = JSON.parse(savedContent);
-            await this.saveContentToFirebase();
-            console.log('✅ Contingut de localStorage sincronitzat amb Firebase');
-        }
-    }
 }
 
 // Initialize admin system when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
     window.adminSystem = new AdminSystem();
-
-    // Add export button to admin mode (optional)
     console.log('🔐 Admin System loaded. Press Ctrl+Shift+A to access admin panel.');
 });
 

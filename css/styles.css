@@ -6,12 +6,14 @@
 }
 
 :root {
-    --color-primary: #d4af37;
+    --color-primary: #00bf63;
+    --color-primary-light: #00e676;
+    --color-primary-dark: #00994d;
     --color-secondary: #1a1a1a;
     --color-background: #0a0a0a;
     --color-text: #e0e0e0;
     --color-text-dim: #999;
-    --color-accent: #ff6b35;
+    --color-accent: #00d95f;
     --font-primary: 'Georgia', serif;
     --font-secondary: 'Arial', sans-serif;
     --transition: all 0.3s ease;
@@ -696,6 +698,57 @@ i.icon-cocktail::before {
     color: var(--color-text);
     font-size: 1.1rem;
     line-height: 1.8;
+}
+
+/* Horari Grid */
+.info-item.horari {
+    grid-column: 1 / -1;
+    max-width: 500px;
+}
+
+.horari-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.horari-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 1rem;
+    background: rgba(26, 26, 26, 0.6);
+    border-left: 3px solid var(--color-primary);
+    border-radius: 0 4px 4px 0;
+    transition: var(--transition);
+}
+
+.horari-row:hover {
+    background: rgba(212, 175, 55, 0.1);
+    transform: translateX(5px);
+}
+
+.horari-row .dia {
+    font-weight: 600;
+    color: var(--color-text);
+    font-size: 1rem;
+}
+
+.horari-row .hores {
+    color: var(--color-primary);
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.horari-row.tancat {
+    border-left-color: #666;
+    opacity: 0.7;
+}
+
+.horari-row.tancat .hores {
+    color: #888;
+    font-style: italic;
 }
 
 .contacto-map {
