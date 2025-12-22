@@ -1,3 +1,12 @@
+/* Font Face */
+@font-face {
+    font-family: 'Muffaroo';
+    src: url('../assets/fonts/muffaroo.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 /* Reset y Variables */
 * {
     margin: 0;
@@ -14,8 +23,8 @@
     --color-text: #e0e0e0;
     --color-text-dim: #999;
     --color-accent: #00d95f;
-    --font-primary: 'Georgia', serif;
-    --font-secondary: 'Arial', sans-serif;
+    --font-primary: 'Muffaroo', 'Georgia', serif;
+    --font-secondary: 'Muffaroo', 'Arial', sans-serif;
     --transition: all 0.3s ease;
 }
 
