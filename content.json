@@ -132,16 +132,44 @@
     "telefono": "+34 722 18 61 91",
     "email": "subvoidbarcelona@gmail.com",
     "horarios": [
-      { "dia": "Lunes",    "horas": "Cerrado",         "cerrado": true },
-      { "dia": "Martes",   "horas": "18:00 - 02:30",   "cerrado": false },
-      { "dia": "Miércoles","horas": "18:00 - 02:30",   "cerrado": false },
-      { "dia": "Jueves",   "horas": "18:00 - 02:30",   "cerrado": false },
-      { "dia": "Viernes",  "horas": "18:00 - 03:00",   "cerrado": false },
-      { "dia": "Sábado",   "horas": "18:00 - 03:00",   "cerrado": false },
-      { "dia": "Domingo",  "horas": "18:00 - 00:00",   "cerrado": false }
+      {
+        "dia": "Lunes",
+        "horas": "Cerrado",
+        "cerrado": true
+      },
+      {
+        "dia": "Martes",
+        "horas": "18:00 - 02:30",
+        "cerrado": false
+      },
+      {
+        "dia": "Miércoles",
+        "horas": "18:00 - 02:30",
+        "cerrado": false
+      },
+      {
+        "dia": "Jueves",
+        "horas": "18:00 - 02:30",
+        "cerrado": false
+      },
+      {
+        "dia": "Viernes",
+        "horas": "18:00 - 03:00",
+        "cerrado": false
+      },
+      {
+        "dia": "Sábado",
+        "horas": "18:00 - 03:00",
+        "cerrado": false
+      },
+      {
+        "dia": "Domingo",
+        "horas": "18:00 - 00:00",
+        "cerrado": false
+      }
     ],
     "redesSociales": {
-      "instagram": "#",
+      "instagram": "#hiddendistrictbcn",
       "facebook": "#",
       "twitter": "#"
     }
