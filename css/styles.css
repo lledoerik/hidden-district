@@ -954,30 +954,6 @@ i.icon-cocktail::before {
         font-size: 0.9rem;
         text-align: center;
     }
-
-    .eventos-privados-content {
-        padding: 0.5rem;
-    }
-
-    .privados-info h3 {
-        font-size: 1.8rem;
-        margin-bottom: 1rem;
-    }
-
-    .privados-features li {
-        font-size: 1rem;
-        padding: 0.6rem 0;
-    }
-
-    .privados-pricing {
-        margin: 2rem 0;
-        padding: 1.5rem;
-        text-align: center;
-    }
-    .privados-form {
-        padding: 1.5rem;
-    }
-
     .section {
         padding: 4rem 1rem;
     }
