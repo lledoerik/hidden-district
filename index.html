@@ -7,6 +7,8 @@
     <link rel="icon" type="image/jpeg" href="assets/img/favicon.jpg">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/admin.css">
+    <!-- Decap CMS Identity Widget -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
     <!-- Hero Section -->
@@ -33,7 +35,7 @@
         <div class="hero-content">
             <div class="hero-logo">
                 <img src="assets/img/hidden-logo.png" alt="Hidden District">
-                <p class="tagline" data-editable="hero.tagline" data-editable-type="text">COCTELERÍA CONCEPTUAL</p>
+                <p class="tagline" id="hero-tagline"></p>
             </div>
         </div>
         <a href="#distrito" class="scroll-indicator">
@@ -45,21 +47,14 @@
     <section id="distrito" class="section distrito-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title" data-editable="distrito.title" data-editable-type="text">EL DISTRITO</h2>
+                <h2 class="section-title" id="distrito-titulo"></h2>
                 <div class="section-divider"></div>
             </div>
             <div class="distrito-content">
                 <div class="distrito-text">
-                    <p class="intro-text" data-editable="distrito.intro" data-editable-type="text">
-                        Hidden District es una coctelería ambientada en un distrito subterráneo industrial y lleno de detalles. Metal, madera, tuberías, crean la sensación de estar en un taller clandestino bajo la ciudad.
-                    </p>
-                    <p data-editable="distrito.paragraph1" data-editable-type="text">
-                        todo gira alrededor de la historia, cada zona parece parte de un sistema y la carta sigue esa misma idea. Los cócteles se presentan como elixires del distrito. Sabores intensos, toques ahumados, herbales y cítricos, y rituales sencillos que hacen que cada trago tenga carácter.
-                    </p>
-                    <p data-editable="distrito.paragraph2" data-editable-type="text">
-                        Es un sitio para venir con calma, mirar alrededor, descubrir detalles y dejarse llevar por la atmósfera. Un lugar escondido, diferente, hecho para quien busca algo más que “otro bar”.
-
-                    </p>
+                    <p class="intro-text" id="distrito-intro"></p>
+                    <p id="distrito-parrafo1"></p>
+                    <p id="distrito-parrafo2"></p>
                 </div>
                 <div class="distrito-features">
                     <div class="feature">
@@ -69,7 +64,7 @@
                     </div>
                     <div class="feature">
                         <div class="feature-icon icon-music"></div>
-                        <h3>Musica</h3>
+                        <h3>Música</h3>
                         <p>Eventos cada semana</p>
                     </div>
                     <div class="feature">
@@ -86,9 +81,9 @@
     <section id="cocteles" class="section cocteles-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title" data-editable="cocteles.title" data-editable-type="text">CÓCTELES DE AUTOR</h2>
+                <h2 class="section-title" id="cocteles-titulo"></h2>
                 <div class="section-divider"></div>
-                <p class="section-subtitle" data-editable="cocteles.subtitle" data-editable-type="text">Bienvenido al distrito: lotes de firma, clarificados, infusiones y humo. Si lo pruebas, ya formas parte del contrabando.</p>
+                <p class="section-subtitle" id="cocteles-subtitulo"></p>
             </div>
 
             <div class="menu-tabs">
@@ -96,95 +91,17 @@
                 <button type="button" class="tab-button" data-tab="tapas">Tapas</button>
             </div>
 
-            <!-- Cócteles Menu -->
+            <!-- Contenedor Cócteles -->
             <div id="cocteles-tab" class="menu-content active">
-                <div class="cocktail-grid">
-                    <div class="cocktail-card" data-editable="cocteles.items.0" data-editable-type="menu-item">
-                        <div class="cocktail-image" data-field="image"></div>
-                        <div class="cocktail-info">
-                            <h3 data-field="name">Proximamente</h3>
-                            <p class="ingredients" data-field="ingredients">Secret</p>
-                            <p class="price" data-field="price">0 €</p>
-                        </div>
-                    </div>
-                    <div class="cocktail-card" data-editable="cocteles.items.1" data-editable-type="menu-item">
-                        <div class="cocktail-image" data-field="image"></div>
-                        <div class="cocktail-info">
-                            <h3 data-field="name">Smoke &amp; Salt Espresso</h3>
-                            <p class="ingredients" data-field="ingredients">Secret</p>
-                            <p class="price" data-field="price">0 €</p>
-                        </div>
-                    </div>
-                    <div class="cocktail-card" data-editable="cocteles.items.2" data-editable-type="menu-item">
-                        <div class="cocktail-image" data-field="image"></div>
-                        <div class="cocktail-info">
-                            <h3 data-field="name">Proximamente</h3>
-                            <p class="ingredients" data-field="ingredients">Secret</p>
-                            <p class="price" data-field="price">0 €</p>
-                        </div>
-                    </div>
-                    <div class="cocktail-card" data-editable="cocteles.items.3" data-editable-type="menu-item">
-                        <div class="cocktail-image" data-field="image"></div>
-                        <div class="cocktail-info">
-                            <h3 data-field="name">Proximamente</h3>
-                            <p class="ingredients" data-field="ingredients">Secret</p>
-                            <p class="price" data-field="price">0 €</p>
-                        </div>
-                    </div>
-                    <div class="cocktail-card" data-editable="cocteles.items.4" data-editable-type="menu-item">
-                        <div class="cocktail-image" data-field="image"></div>
-                        <div class="cocktail-info">
-                            <h3 data-field="name">Proximamente</h3>
-                            <p class="ingredients" data-field="ingredients">Secret</p>
-                            <p class="price" data-field="price">0 €</p>
-                        </div>
-                    </div>
-                    <div class="cocktail-card" data-editable="cocteles.items.5" data-editable-type="menu-item">
-                        <div class="cocktail-image" data-field="image"></div>
-                        <div class="cocktail-info">
-                            <h3 data-field="name">Proximamente</h3>
-                            <p class="ingredients" data-field="ingredients">Secret</p>
-                            <p class="price" data-field="price">0 €</p>
-                        </div>
-                    </div>
+                <div class="cocktail-grid" id="cocktail-grid">
+                    <!-- Inyectado por main.js -->
                 </div>
             </div>
 
-            <!-- Tapas Menu -->
+            <!-- Contenedor Tapas -->
             <div id="tapas-tab" class="menu-content">
-                <div class="cocktail-grid">
-                    <div class="cocktail-card" data-editable="tapas.items.0" data-editable-type="menu-item">
-                        <div class="cocktail-image" data-field="image"></div>
-                        <div class="cocktail-info">
-                            <h3 data-field="name">Croquetas del distrito</h3>
-                            <p class="ingredients" data-field="ingredients">Secret</p>
-                            <p class="price" data-field="price">0 €</p>
-                        </div>
-                    </div>
-                    <div class="cocktail-card" data-editable="tapas.items.1" data-editable-type="menu-item">
-                        <div class="cocktail-image" data-field="image"></div>
-                        <div class="cocktail-info">
-                            <h3 data-field="name">Proximamente</h3>
-                            <p class="ingredients" data-field="ingredients">Secret</p>
-                            <p class="price" data-field="price">0 €</p>
-                        </div>
-                    </div>
-                    <div class="cocktail-card" data-editable="tapas.items.2" data-editable-type="menu-item">
-                        <div class="cocktail-image" data-field="image"></div>
-                        <div class="cocktail-info">
-                            <h3 data-field="name">Proximamente</h3>
-                            <p class="ingredients" data-field="ingredients">Secret</p>
-                            <p class="price" data-field="price">0 €</p>
-                        </div>
-                    </div>
-                    <div class="cocktail-card" data-editable="tapas.items.3" data-editable-type="menu-item">
-                        <div class="cocktail-image" data-field="image"></div>
-                        <div class="cocktail-info">
-                            <h3 data-field="name">Proximamente</h3>
-                            <p class="ingredients" data-field="ingredients">Secret</p>
-                            <p class="price" data-field="price">0 €</p>
-                        </div>
-                    </div>
+                <div class="cocktail-grid" id="tapas-grid">
+                    <!-- Inyectado por main.js -->
                 </div>
             </div>
         </div>
@@ -194,53 +111,12 @@
     <section id="eventos" class="section eventos-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title" data-editable="eventos.title" data-editable-type="text">EVENTOS</h2>
+                <h2 class="section-title" id="eventos-titulo"></h2>
                 <div class="section-divider"></div>
-                <p class="section-subtitle" data-editable="eventos.subtitle" data-editable-type="text">¡Eventos del distrito, fiesta, descuentos y días especiales!</p>
+                <p class="section-subtitle" id="eventos-subtitulo"></p>
             </div>
-            <div class="eventos-grid">
-                <div class="evento-card" data-editable="eventos.items.0" data-editable-type="event">
-                    <div class="evento-date">
-                        <span class="day" data-field="day">7</span>
-                        <span class="month" data-field="month">MAR</span>
-                    </div>
-                    <div class="evento-content">
-                        <h3 data-field="title">Apertura</h3>
-                        <p class="evento-description" data-field="description">Proximamente</p>
-                        <div class="evento-details">
-                            <span><i class="icon-clock"></i> <span data-field="time">18:00 h</span></span>
-                            <span><i class="icon-music"></i> <span data-field="type">Rock</span></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="evento-card" data-editable="eventos.items.1" data-editable-type="event">
-                    <div class="evento-date">
-                        <span class="day" data-field="day">23</span>
-                        <span class="month" data-field="month">ABR</span>
-                    </div>
-                    <div class="evento-content">
-                        <h3 data-field="title">Sant Jordi</h3>
-                        <p class="evento-description" data-field="description">Proximamente</p>
-                        <div class="evento-details">
-                            <span><i class="icon-clock"></i> <span data-field="time">18:00-02:30 h</span></span>
-                            <span><i class="icon-cocktail"></i> <span data-field="type">Techno</span></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="evento-card" data-editable="eventos.items.2" data-editable-type="event">
-                    <div class="evento-date">
-                        <span class="day" data-field="day">7</span>
-                        <span class="month" data-field="month">JUL</span>
-                    </div>
-                    <div class="evento-content">
-                        <h3 data-field="title">Proximamente</h3>
-                        <p class="evento-description" data-field="description">Proximamente</p>
-                        <div class="evento-details">
-                            <span><i class="icon-clock"></i> <span data-field="time">18:00 - 02:30 h</span></span>
-                            <span><i class="icon-headphones"></i> <span data-field="type">Trance</span></span>
-                        </div>
-                    </div>
-                </div>
+            <div class="eventos-grid" id="eventos-grid">
+                <!-- Inyectado por main.js -->
             </div>
         </div>
     </section>
@@ -249,25 +125,19 @@
     <section id="eventos-privados" class="section eventos-privados-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title" data-editable="eventosPrivados.title" data-editable-type="text">EVENTOS PRIVADOS</h2>
+                <h2 class="section-title" id="privados-titulo"></h2>
                 <div class="section-divider"></div>
-                <p class="section-subtitle" data-editable="eventosPrivados.subtitle" data-editable-type="text">Reserva nuestra planta superior</p>
+                <p class="section-subtitle" id="privados-subtitulo"></p>
             </div>
             <div class="eventos-privados-content">
                 <div class="privados-info">
-                    <h3 data-editable="eventosPrivados.mainTitle" data-editable-type="text">¿Qué ofrecemos?</h3>
-                    <p data-editable="eventosPrivados.description" data-editable-type="text">Al reservar nuestra sala tienes:</p>
-                    <ul class="privados-features">
-                        <li>✓ Lista de cosas</li>
-                        <li>✓ Que obtienen</li>
-                        <li>✓ Por reservar</li>
-                        <li>✓ La sala </li>
-                        <li>✓ De arriba</li>
-                        <li>✓ Para eventos privados</li>
-
+                    <h3 id="privados-titulo-principal"></h3>
+                    <p id="privados-descripcion"></p>
+                    <ul class="privados-features" id="privados-caracteristicas">
+                        <!-- Inyectado por main.js -->
                     </ul>
                     <div class="privados-pricing">
-                        <h4>Reserva por tan solo 0 €</h4>
+                        <h4 id="privados-precio"></h4>
                     </div>
                 </div>
                 <div class="privados-form">
@@ -302,54 +172,30 @@
     <section id="contacto" class="section contacto-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title" data-editable="contacto.title" data-editable-type="text">CONTACTO</h2>
+                <h2 class="section-title" id="contacto-titulo"></h2>
                 <div class="section-divider"></div>
             </div>
             <div class="contacto-content">
                 <div class="contacto-info">
                     <div class="info-item">
-                        <h3><i class="icon-location"></i> <span data-editable="contacto.address.title" data-editable-type="text">Direcció</span></h3>
-                        <p><span data-editable="contacto.address.line1" data-editable-type="text">Carrer de Bilbao, 182</span><br><span data-editable="contacto.address.line2" data-editable-type="text">Sant Martí 08018, Barcelona</span></p>
+                        <h3><i class="icon-location"></i> Dirección</h3>
+                        <p>
+                            <span id="contacto-direccion1"></span><br>
+                            <span id="contacto-direccion2"></span>
+                        </p>
                     </div>
                     <div class="info-item">
-                        <h3><i class="icon-phone"></i> Telèfon</h3>
-                        <p data-editable="contacto.phone" data-editable-type="text">+34 722 18 61 91</p>
+                        <h3><i class="icon-phone"></i> Teléfono</h3>
+                        <p id="contacto-telefono"></p>
                     </div>
                     <div class="info-item">
                         <h3><i class="icon-email"></i> Email</h3>
-                        <p data-editable="contacto.email" data-editable-type="text">subvoidbarcelona@gmail.com</p>
+                        <p id="contacto-email"></p>
                     </div>
-                    <div class="info-item horari" data-editable="contacto.hours" data-editable-type="schedule">
-                        <h3><i class="icon-clock"></i> <span data-editable="contacto.hours.title" data-editable-type="text">Horari</span></h3>
-                        <div class="horari-grid">
-                            <div class="horari-row tancat" data-day="dilluns">
-                                <span class="dia">Lunes</span>
-                                <span class="hores" data-field="dilluns">Cerrado</span>
-                            </div>
-                            <div class="horari-row" data-day="dimarts">
-                                <span class="dia">Martes</span>
-                                <span class="hores" data-field="dimarts">18:00 - 02:30</span>
-                            </div>
-                            <div class="horari-row" data-day="dimecres">
-                                <span class="dia">Miércoles</span>
-                                <span class="hores" data-field="dimecres">18:00 - 02:30</span>
-                            </div>
-                            <div class="horari-row" data-day="dijous">
-                                <span class="dia">Jueves</span>
-                                <span class="hores" data-field="dijous">18:00 - 02:30</span>
-                            </div>
-                            <div class="horari-row" data-day="divendres">
-                                <span class="dia">Viernes</span>
-                                <span class="hores" data-field="divendres">18:00 - 03:00</span>
-                            </div>
-                            <div class="horari-row" data-day="dissabte">
-                                <span class="dia">Sábado</span>
-                                <span class="hores" data-field="dissabte">18:00 - 03:00</span>
-                            </div>
-                            <div class="horari-row" data-day="diumenge">
-                                <span class="dia">Domingo</span>
-                                <span class="hores" data-field="diumenge">18:00 - 00:00</span>
-                            </div>
+                    <div class="info-item horari">
+                        <h3><i class="icon-clock"></i> Horario</h3>
+                        <div class="horari-grid" id="horario-grid">
+                            <!-- Inyectado por main.js -->
                         </div>
                     </div>
                 </div>
@@ -365,11 +211,9 @@
                 </div>
             </div>
             <div class="social-links">
-                <h3 data-editable="contacto.social.title" data-editable-type="text">REDES SOCIALES</h3>
-                <div class="social-icons">
-                    <a href="#" class="social-icon" data-editable="contacto.social.instagram" data-editable-type="link">Instagram</a>
-                    <a href="#" class="social-icon" data-editable="contacto.social.facebook" data-editable-type="link">Facebook</a>
-                    <a href="#" class="social-icon" data-editable="contacto.social.twitter" data-editable-type="link">Twitter</a>
+                <h3>REDES SOCIALES</h3>
+                <div class="social-icons" id="social-icons">
+                    <!-- Inyectado por main.js -->
                 </div>
             </div>
         </div>
@@ -378,19 +222,25 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p data-editable="footer.copyright" data-editable-type="text">&copy; Hidden District - Coctelería conceptual.</p>
+            <p id="footer-copyright"></p>
         </div>
     </footer>
 
-    <!-- Firebase SDK -->
-    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
-
-    <!-- Firebase Configuration -->
-    <script src="js/firebase-config.js"></script>
-
-    <!-- App Scripts -->
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
     <script src="js/script.js"></script>
-    <script src="js/admin.js"></script>
+
+    <!-- Redirección de Netlify Identity al admin -->
+    <script>
+        if (window.netlifyIdentity) {
+            window.netlifyIdentity.on('init', user => {
+                if (!user) {
+                    window.netlifyIdentity.on('login', () => {
+                        document.location.href = '/admin/';
+                    });
+                }
+            });
+        }
+    </script>
 </body>
 </html>
