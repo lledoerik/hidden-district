@@ -1,3 +1,3 @@
 # Hidden District
 
-Web application for Hidden District - Coctelería Evolutiva.
+Hidden District - Coctelería Conceptual.
