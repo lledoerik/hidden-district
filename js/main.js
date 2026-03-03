@@ -130,11 +130,6 @@ async function cargarContenido() {
 
         // ── Contacto ──────────────────────────────────────────────────────────
         document.getElementById('contacto-titulo').textContent    = datos.contacto.titulo;
-        document.getElementById('contacto-direccion1').textContent = datos.contacto.direccion.linea1;
-        document.getElementById('contacto-direccion2').textContent = datos.contacto.direccion.linea2;
-        document.getElementById('contacto-telefono').textContent  = datos.contacto.telefono;
-        document.getElementById('contacto-email').textContent     = datos.contacto.email;
-
         // Horarios
         const gridHorario = document.getElementById('horario-grid');
         gridHorario.innerHTML = datos.contacto.horarios
@@ -144,7 +139,7 @@ async function cargarContenido() {
         // Redes sociales
         const contenedorSocial = document.getElementById('social-icons');
         const redes = datos.contacto.redesSociales;
-        const nombresRedes = { instagram: 'Instagram', facebook: 'Facebook', twitter: 'Twitter' };
+        const nombresRedes = { INSTAGRAM: 'Instagram', CORREO: 'Correo', TELEFONO: 'Teléfono' };
         contenedorSocial.innerHTML = Object.entries(redes)
             .map(([clave, url]) => plantillaRedSocial(nombresRedes[clave] || clave, url))
             .join('');

@@ -124,13 +124,7 @@
     "precio": "0 €"
   },
   "contacto": {
-    "titulo": "CONTACTO",
-    "direccion": {
-      "linea1": "Carrer de Bilbao, 182",
-      "linea2": "Sant Martí 08018, Barcelona"
-    },
-    "telefono": "+34 722 18 61 91",
-    "email": "subvoidbarcelona@gmail.com",
+    "titulo": "HORARIO",
     "horarios": [
       {
         "dia": "Lunes",
@@ -169,9 +163,9 @@
       }
     ],
     "redesSociales": {
-      "instagram": "https://www.instagram.com/hiddendistrictbcn",
-      "facebook": "#",
-      "twitter": "#"
+      "CORREO": "mailto:subvoidbarcelona@gmail.com",
+      "TELÉFONO": "tel:+34 722 18 61 91",
+      "INSTAGRAM": "https://www.instagram.com/hiddendistrictbcn"
     }
   },
   "footer": {
