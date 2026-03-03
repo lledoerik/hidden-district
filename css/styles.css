@@ -607,7 +607,7 @@ i.icon-cocktail::before {
 }
 
 .privados-pricing {
-    background: rgba(212, 175, 55, 0.1);
+    background: rgba(92, 212, 55, 0.1);
     padding: 2rem;
     border-left: 4px solid var(--color-primary);
     margin-top: 2rem;
