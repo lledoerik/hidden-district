@@ -674,9 +674,8 @@ i.icon-cocktail::before {
 }
 
 .btn-primary:hover {
-    background: #c9a02c;
     transform: translateY(-2px);
-    box-shadow: 0 5px 20px rgba(212, 175, 55, 0.4);
+    box-shadow: 0 5px 20px rgba(55, 212, 107, 0.4);
 }
 
 /* Contacto Section */
