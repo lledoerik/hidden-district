@@ -154,7 +154,7 @@ i.icon-cocktail::before {
     -webkit-backdrop-filter: blur(10px);
     z-index: 1000;
     padding: 1rem 0;
-    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    border-bottom: 1px solid rgba(0, 191, 99, 0.25);
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
 }
@@ -324,7 +324,7 @@ i.icon-cocktail::before {
 /* Sections */
 .section {
     padding: 6rem 0;
-    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+    border-bottom: 1px solid rgba(0, 191, 99, 0.12);
     overflow-x: hidden;
 }
 
@@ -398,14 +398,14 @@ i.icon-cocktail::before {
 }
 
 .feature {
-    background: rgba(38, 99, 20, 0.1);
+    background: rgba(0, 191, 99, 0.04);
     padding: 2rem;
     border-left: 3px solid var(--color-primary);
     transition: var(--transition);
 }
 
 .feature:hover {
-    background: rgba(92, 212, 55, 0.144);
+    background: rgba(0, 191, 99, 0.14);
     transform: translateX(10px);
 }
 
@@ -465,7 +465,7 @@ i.icon-cocktail::before {
 
 .cocktail-card {
     background: rgba(26, 26, 26, 0.8);
-    border: 1px solid rgba(212, 175, 55, 0.2);
+    border: 1px solid rgba(0, 191, 99, 0.2);
     overflow: hidden;
     transition: var(--transition);
 }
@@ -473,12 +473,12 @@ i.icon-cocktail::before {
 .cocktail-card:hover {
     transform: translateY(-10px);
     border-color: var(--color-primary);
-    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 191, 99, 0.2);
 }
 
 .cocktail-image {
     height: 250px;
-    background: linear-gradient(135deg, rgba(212, 175, 55, 0.3) 0%, rgba(26, 26, 26, 0.8) 100%),
+    background: linear-gradient(135deg, rgba(0, 191, 99, 0.25) 0%, rgba(26, 26, 26, 0.8) 100%),
                 url('https://images.unsplash.com/photo-1536935338788-846bb9981813?w=800') center/cover;
 }
 
@@ -518,7 +518,7 @@ i.icon-cocktail::before {
 
 .evento-card {
     background: rgba(10, 10, 10, 0.8);
-    border: 1px solid rgba(212, 175, 55, 0.2);
+    border: 1px solid rgba(0, 191, 99, 0.2);
     padding: 2rem;
     display: flex;
     gap: 1.5rem;
@@ -602,12 +602,12 @@ i.icon-cocktail::before {
 
 .privados-features li {
     padding: 0.8rem 0;
-    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+    border-bottom: 1px solid rgba(0, 191, 99, 0.12);
     font-size: 1.1rem;
 }
 
 .privados-pricing {
-    background: rgba(92, 212, 55, 0.1);
+    background: rgba(0, 191, 99, 0.08);
     padding: 2rem;
     border-left: 4px solid var(--color-primary);
     margin-top: 2rem;
@@ -622,7 +622,7 @@ i.icon-cocktail::before {
 .privados-form {
     background: rgba(26, 26, 26, 0.5);
     padding: 2.5rem;
-    border: 1px solid rgba(212, 175, 55, 0.2);
+    border: 1px solid rgba(0, 191, 99, 0.2);
 }
 
 .privados-form h3 {
@@ -641,7 +641,7 @@ i.icon-cocktail::before {
     width: 100%;
     padding: 1rem;
     background: rgba(10, 10, 10, 0.8);
-    border: 1px solid rgba(212, 175, 55, 0.3);
+    border: 1px solid rgba(0, 191, 99, 0.25);
     color: var(--color-text);
     font-size: 1rem;
     font-family: var(--font-secondary);
@@ -675,7 +675,7 @@ i.icon-cocktail::before {
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 5px 20px rgba(55, 212, 107, 0.4);
+    box-shadow: 0 5px 20px rgba(0, 191, 99, 0.4);
 }
 
 /* Contacto Section */
@@ -733,7 +733,7 @@ i.icon-cocktail::before {
 }
 
 .horari-row:hover {
-    background: rgba(212, 175, 55, 0.1);
+    background: rgba(0, 191, 99, 0.1);
     transform: translateX(5px);
 }
 
@@ -750,18 +750,18 @@ i.icon-cocktail::before {
 }
 
 .horari-row.tancat {
-    border-left-color: #666;
-    opacity: 0.7;
+    border-left-color: #444;
+    opacity: 0.6;
 }
 
 .horari-row.tancat .hores {
-    color: #888;
+    color: #666;
     font-style: italic;
 }
 
 .contacto-map {
     background: rgba(26, 26, 26, 0.5);
-    border: 1px solid rgba(212, 175, 55, 0.2);
+    border: 1px solid rgba(0, 191, 99, 0.2);
     overflow: hidden;
     min-height: 400px;
 }
@@ -777,7 +777,7 @@ i.icon-cocktail::before {
 .social-links {
     text-align: center;
     padding-top: 3rem;
-    border-top: 1px solid rgba(212, 175, 55, 0.2);
+    border-top: 1px solid rgba(0, 191, 99, 0.15);
 }
 
 .social-links h3 {
@@ -813,7 +813,7 @@ i.icon-cocktail::before {
     background: var(--color-secondary);
     padding: 2rem 0;
     text-align: center;
-    border-top: 1px solid rgba(212, 175, 55, 0.2);
+    border-top: 1px solid rgba(0, 191, 99, 0.15);
 }
 
 .footer p {
