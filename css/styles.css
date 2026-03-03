@@ -398,14 +398,14 @@ i.icon-cocktail::before {
 }
 
 .feature {
-    background: rgba(212, 175, 55, 0.05);
+    background: rgba(38, 99, 20, 0.1);
     padding: 2rem;
     border-left: 3px solid var(--color-primary);
     transition: var(--transition);
 }
 
 .feature:hover {
-    background: rgba(212, 175, 55, 0.1);
+    background: rgba(92, 212, 55, 0.144);
     transform: translateX(10px);
 }
 
