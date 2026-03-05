@@ -1,5 +1,6 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: lledoerik/hidden-district
   branch: main
 
 # Carpeta de medios (imágenes subidas desde el CMS)
