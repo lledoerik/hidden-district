@@ -7,8 +7,6 @@
     <link rel="icon" type="image/jpeg" href="assets/img/favicon.jpg">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/admin.css">
-    <!-- Decap CMS Identity Widget -->
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
     <!-- Hero Section -->
@@ -214,18 +212,5 @@
     <!-- Scripts -->
     <script src="js/main.js"></script>
     <script src="js/script.js"></script>
-
-    <!-- Redirección de Netlify Identity al admin -->
-    <script>
-        if (window.netlifyIdentity) {
-            window.netlifyIdentity.on('init', user => {
-                if (!user) {
-                    window.netlifyIdentity.on('login', () => {
-                        document.location.href = '/admin/';
-                    });
-                }
-            });
-        }
-    </script>
 </body>
 </html>
