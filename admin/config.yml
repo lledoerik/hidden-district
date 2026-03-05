@@ -2,6 +2,7 @@ backend:
   name: github
   repo: lledoerik/hidden-district
   branch: main
+  base_url: https://api.netlify.com
 
 # Carpeta de medios (imágenes subidas desde el CMS)
 media_folder: "assets/img/uploads"
