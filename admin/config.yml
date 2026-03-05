@@ -3,6 +3,8 @@ backend:
   repo: lledoerik/hidden-district
   branch: main
   auth_type: implicit
+  app_id: "Ov23liZbfmZnKinHdEJ3"
+  
 # Carpeta de medios (imágenes subidas desde el CMS)
 media_folder: "assets/img/uploads"
 public_folder: "/assets/img/uploads"
