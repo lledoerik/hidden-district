@@ -1,8 +1,8 @@
 backend:
   name: github
   repo: lledoerik/hidden-district
-  base_url: https://github.com 
-  auth_endpoint: login/oauth/authorize
+  branch: main
+  base_url: https://sveltia-auth-hidden-district.rik-lled.workers.dev
 
 # Carpeta de medios (imágenes subidas desde el CMS)
 media_folder: "assets/img/uploads"
