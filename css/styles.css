@@ -29,6 +29,7 @@
 }
 
 html {
+    /* NO overflow-x: hidden aquí — rompe position:fixed en iOS/WebKit */
     scroll-behavior: smooth;
 }
 
@@ -40,6 +41,7 @@ body {
     overflow-x: hidden;
     max-width: 100vw;
     position: relative;
+    /* Necesario para que overflow-x funcione sin romper fixed en iOS */
     -webkit-overflow-scrolling: touch;
 }
 
@@ -792,7 +794,8 @@ i.icon-cocktail::before {
 .social-icons {
     display: flex;
     justify-content: center;
-    gap: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
 .social-icon {
@@ -906,5 +909,14 @@ i.icon-cocktail::before {
 
     .nav-container {
         padding: 0 1rem;
+    }
+
+    .social-icon {
+        flex: 1 1 auto;
+        min-width: 120px;
+        max-width: 200px;
+        padding: 0.8rem 1rem;
+        font-size: 0.9rem;
+        text-align: center;
     }
 }
