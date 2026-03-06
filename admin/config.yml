@@ -2,7 +2,7 @@ backend:
   name: github
   repo: lledoerik/hidden-district
   branch: main
-  auth_type: implicit
+  use_pkce: true
 
 # Carpeta de medios (imágenes subidas desde el CMS)
 media_folder: "assets/img/uploads"
