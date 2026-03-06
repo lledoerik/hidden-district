@@ -19,14 +19,11 @@ const menuContents = document.querySelectorAll('.menu-content');
 
 tabButtons.forEach(button => {
     button.addEventListener('click', () => {
-        // Remove active class from all buttons and contents
         tabButtons.forEach(btn => btn.classList.remove('active'));
         menuContents.forEach(content => content.classList.remove('active'));
 
-        // Add active class to clicked button
         button.classList.add('active');
 
-        // Show corresponding content
         const tabName = button.getAttribute('data-tab');
         const targetContent = document.getElementById(`${tabName}-tab`);
         if (targetContent) {
@@ -41,7 +38,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
-            const offsetTop = target.offsetTop - 0; // Account for fixed navbar
+            const offsetTop = target.offsetTop - 0;
             window.scrollTo({
                 top: offsetTop,
                 behavior: 'smooth'
@@ -58,22 +55,14 @@ window.addEventListener('scroll', () => {
     } else {
         navbar.style.background = 'rgba(10, 10, 10, 0.95)';
     }
-});
+}, { passive: true });
 
 // Form submission handler
 const privadosForm = document.getElementById('privados-form');
 if (privadosForm) {
     privadosForm.addEventListener('submit', (e) => {
         e.preventDefault();
-
-        // Get form data
-        const formData = new FormData(privadosForm);
-
-        // Here you would typically send the data to a server
-        // For now, we'll just show a success message
         alert('¡Gracias por tu solicitud! Nos pondremos en contacto contigo pronto.');
-
-        // Reset form
         privadosForm.reset();
     });
 }
@@ -101,14 +90,6 @@ document.querySelectorAll('.section').forEach(section => {
     observer.observe(section);
 });
 
-// Parallax effect for hero section
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const hero = document.querySelector('.hero');
-    if (hero && scrolled < window.innerHeight) {
-        hero.style.transform = `translateY(${scrolled * 0.5}px)`;
-    }
-});
 
 // Active nav link highlight on scroll
 window.addEventListener('scroll', () => {
@@ -119,7 +100,6 @@ window.addEventListener('scroll', () => {
 
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
         if (pageYOffset >= sectionTop - 200) {
             current = section.getAttribute('id');
         }
@@ -131,7 +111,7 @@ window.addEventListener('scroll', () => {
             link.classList.add('active');
         }
     });
-});
+}, { passive: true });
 
 // Preload images for better performance
 window.addEventListener('load', () => {
@@ -141,4 +121,4 @@ window.addEventListener('load', () => {
     });
 });
 
-console.log('Hidden District - Web cargada correctamente');
+console.log('Hidden District - Web cargada correctament ✓');

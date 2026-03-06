@@ -26,17 +26,17 @@ collections:
             name: "hero"
             widget: "object"
             fields:
-              - { label: "Tagline",  name: "tagline", widget: "string" }
+              - { label: "Tagline", name: "tagline", widget: "string" }
 
           # ── El Distrito ───────────────────────────────────────────────────────
           - label: "El Distrito"
             name: "distrito"
             widget: "object"
             fields:
-              - { label: "Título",    name: "titulo",    widget: "string" }
-              - { label: "Intro",     name: "intro",     widget: "text" }
-              - { label: "Párrafo 1", name: "parrafo1",  widget: "text" }
-              - { label: "Párrafo 2", name: "parrafo2",  widget: "text" }
+              - { label: "Título",    name: "titulo",   widget: "string" }
+              - { label: "Intro",     name: "intro",    widget: "text" }
+              - { label: "Párrafo 1", name: "parrafo1", widget: "text" }
+              - { label: "Párrafo 2", name: "parrafo2", widget: "text" }
 
           # ── Cócteles ──────────────────────────────────────────────────────────
           - label: "Cócteles de Autor"
@@ -49,10 +49,10 @@ collections:
                 name: "items"
                 widget: "list"
                 fields:
-                  - { label: "Nombre",      name: "nombre",      widget: "string" }
+                  - { label: "Nombre",       name: "nombre",       widget: "string" }
                   - { label: "Ingredientes", name: "ingredientes", widget: "string" }
-                  - { label: "Precio",      name: "precio",      widget: "string" }
-                  - { label: "Imagen",      name: "imagen",      widget: "image", required: false }
+                  - { label: "Precio",       name: "precio",       widget: "string" }
+                  - { label: "Imagen",       name: "imagen",       widget: "image", required: false }
 
           # ── Tapas ─────────────────────────────────────────────────────────────
           - label: "Tapas"
@@ -63,10 +63,10 @@ collections:
                 name: "items"
                 widget: "list"
                 fields:
-                  - { label: "Nombre",      name: "nombre",      widget: "string" }
+                  - { label: "Nombre",       name: "nombre",       widget: "string" }
                   - { label: "Ingredientes", name: "ingredientes", widget: "string" }
-                  - { label: "Precio",      name: "precio",      widget: "string" }
-                  - { label: "Imagen",      name: "imagen",      widget: "image", required: false }
+                  - { label: "Precio",       name: "precio",       widget: "string" }
+                  - { label: "Imagen",       name: "imagen",       widget: "image", required: false }
 
           # ── Eventos ───────────────────────────────────────────────────────────
           - label: "Eventos"
@@ -79,12 +79,12 @@ collections:
                 name: "items"
                 widget: "list"
                 fields:
-                  - { label: "Día",         name: "dia",         widget: "string" }
-                  - { label: "Mes (abrev.)", name: "mes",         widget: "string" }
-                  - { label: "Título",       name: "titulo",      widget: "string" }
-                  - { label: "Descripción",  name: "descripcion", widget: "text" }
-                  - { label: "Hora",         name: "hora",        widget: "string" }
-                  - { label: "Tipo de música / ambiente", name: "tipo", widget: "string" }
+                  - { label: "Día",                       name: "dia",         widget: "string" }
+                  - { label: "Mes (abrev.)",               name: "mes",         widget: "string" }
+                  - { label: "Título",                    name: "titulo",      widget: "string" }
+                  - { label: "Descripción",               name: "descripcion", widget: "text" }
+                  - { label: "Hora",                      name: "hora",        widget: "string" }
+                  - { label: "Tipo de música / ambiente", name: "tipo",        widget: "string" }
 
           # ── Eventos Privados ──────────────────────────────────────────────────
           - label: "Eventos Privados"
@@ -101,22 +101,12 @@ collections:
                 field: { label: "Característica", name: "item", widget: "string" }
               - { label: "Precio de reserva", name: "precio", widget: "string" }
 
-          # ── Contacto ──────────────────────────────────────────────────────────
-          - label: "Contacto"
+          # ── Contacto / Horario ────────────────────────────────────────────────
+          - label: "Horario y Contacto"
             name: "contacto"
             widget: "object"
             fields:
-              - { label: "Título sección", name: "titulo", widget: "string" }
-
-              - label: "Dirección"
-                name: "direccion"
-                widget: "object"
-                fields:
-                  - { label: "Línea 1 (calle)", name: "linea1", widget: "string" }
-                  - { label: "Línea 2 (ciudad)", name: "linea2", widget: "string" }
-
-              - { label: "Teléfono", name: "telefono", widget: "string" }
-              - { label: "Email",    name: "email",    widget: "string" }
+              - { label: "Título de sección", name: "titulo", widget: "string" }
 
               - label: "Horarios"
                 name: "horarios"
@@ -126,13 +116,14 @@ collections:
                   - { label: "Horas",   name: "horas",   widget: "string" }
                   - { label: "Cerrado", name: "cerrado", widget: "boolean", default: false }
 
-              - label: "Redes sociales"
+              # Las claves deben coincidir exactamente con las del content.json
+              - label: "Contacto"
                 name: "redesSociales"
                 widget: "object"
                 fields:
-                  - { label: "Instagram (URL)", name: "instagram", widget: "string" }
-                  - { label: "Facebook (URL)",  name: "facebook",  widget: "string" }
-                  - { label: "Twitter (URL)",   name: "twitter",   widget: "string" }
+                  - { label: "Teléfono (enlace tel:+34…)", name: "TELÉFONO", widget: "string" }
+                  - { label: "Correo (enlace mailto:…)",   name: "CORREO",   widget: "string" }
+                  - { label: "Instagram (URL completa)",   name: "INSTAGRAM", widget: "string" }
 
           # ── Footer ────────────────────────────────────────────────────────────
           - label: "Footer"
