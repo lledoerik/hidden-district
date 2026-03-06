@@ -57,13 +57,32 @@ window.addEventListener('scroll', () => {
     }
 }, { passive: true });
 
-// Form submission handler
+// Form submission handler with Formspree
 const privadosForm = document.getElementById('privados-form');
 if (privadosForm) {
-    privadosForm.addEventListener('submit', (e) => {
+    privadosForm.addEventListener('submit', async (e) => {
         e.preventDefault();
-        alert('¡Gracias por tu solicitud! Nos pondremos en contacto contigo pronto.');
-        privadosForm.reset();
+
+        const data = new FormData(privadosForm);
+
+        try {
+            const response = await fetch(privadosForm.action, {
+                method: 'POST',
+                body: data,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                alert('¡Gracias por tu solicitud! Nos pondremos en contacto contigo pronto.');
+                privadosForm.reset();
+            } else {
+                alert('Oops! Hubo un problema al enviar tu reserva.');
+            }
+        } catch (error) {
+            alert('Oops! Ocurrió un error al intentar contactar con el servidor.');
+        }
     });
 }
 

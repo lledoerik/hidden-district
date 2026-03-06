@@ -140,24 +140,24 @@
                 </div>
                 <div class="privados-form">
                     <h3>¡Haz tu reserva!</h3>
-                    <form id="privados-form">
+                    <form id="privados-form" action="https://formspree.io/f/xzdjplqo" method="POST">
                         <div class="form-group">
-                            <input type="text" placeholder="Nombre completo" required>
+                            <input type="text" name="nombre" placeholder="Nombre completo" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" placeholder="Email" required>
+                            <input type="email" name="email" placeholder="Email" required>
                         </div>
                         <div class="form-group">
-                            <input type="tel" placeholder="Teléfono" required>
+                            <input type="tel" name="telefono" placeholder="Teléfono" required>
                         </div>
                         <div class="form-group">
-                            <input type="date" required aria-label="Fecha del evento">
+                            <input type="date" name="fecha" required aria-label="Fecha del evento">
                         </div>
                         <div class="form-group">
-                            <input type="number" placeholder="Aforo" min="1" required>
+                            <input type="number" name="aforo" placeholder="Aforo" min="1" required>
                         </div>
                         <div class="form-group">
-                            <textarea placeholder="Cuéntanos sobre tu evento..." rows="4" required></textarea>
+                            <textarea name="mensaje" placeholder="Cuéntanos sobre tu evento..." rows="4" required></textarea>
                         </div>
                         <button type="submit" class="btn-primary">Enviar</button>
                     </form>
