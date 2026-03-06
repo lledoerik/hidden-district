@@ -2,14 +2,28 @@
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 
+function abrirMenu() {
+    navMenu.classList.add('active');
+    hamburger.classList.add('active');
+}
+
+function cerrarMenu() {
+    navMenu.classList.remove('active');
+    hamburger.classList.remove('active');
+}
+
 hamburger.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
+    if (navMenu.classList.contains('active')) {
+        cerrarMenu();
+    } else {
+        abrirMenu();
+    }
 });
 
-// Close menu when clicking on a nav link
+// Close menu when a nav link is clicked
 document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
+        cerrarMenu();
     });
 });
 
@@ -54,22 +68,26 @@ const navbar = document.querySelector('.navbar');
 window.addEventListener('scroll', () => {
     const currentScrollY = window.scrollY;
 
+    // Si el menú está abierto, cerrarlo
+    if (navMenu.classList.contains('active')) {
+        cerrarMenu();
+        return;
+    }
+
     if (currentScrollY <= 10) {
-        // En lo alto de la página: siempre visible
         navbar.style.transform = 'translateY(0)';
         navbar.style.background = 'rgba(10, 10, 10, 0.95)';
     } else if (currentScrollY > lastScrollY + 8) {
-        // Scrollando hacia abajo: ocultar
         navbar.style.transform = 'translateY(-100%)';
         navbar.style.background = 'rgba(10, 10, 10, 0.98)';
     } else if (currentScrollY < lastScrollY - 8) {
-        // Scrollando hacia arriba: mostrar
         navbar.style.transform = 'translateY(0)';
         navbar.style.background = 'rgba(10, 10, 10, 0.98)';
     }
 
     lastScrollY = currentScrollY;
 }, { passive: true });
+
 
 // Form submission handler with Formspree
 const privadosForm = document.getElementById('privados-form');
