@@ -47,42 +47,37 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Navbar background on scroll
+// Navbar: ocultar al hacer scroll abajo, mostrar al subir
+let lastScrollY = 0;
+const navbar = document.querySelector('.navbar');
+
 window.addEventListener('scroll', () => {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 100) {
-        navbar.style.background = 'rgba(10, 10, 10, 0.98)';
-    } else {
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY <= 10) {
+        // En lo alto de la página: siempre visible
+        navbar.style.transform = 'translateY(0)';
         navbar.style.background = 'rgba(10, 10, 10, 0.95)';
+    } else if (currentScrollY > lastScrollY + 8) {
+        // Scrollando hacia abajo: ocultar
+        navbar.style.transform = 'translateY(-100%)';
+        navbar.style.background = 'rgba(10, 10, 10, 0.98)';
+    } else if (currentScrollY < lastScrollY - 8) {
+        // Scrollando hacia arriba: mostrar
+        navbar.style.transform = 'translateY(0)';
+        navbar.style.background = 'rgba(10, 10, 10, 0.98)';
     }
+
+    lastScrollY = currentScrollY;
 }, { passive: true });
 
-// Form submission handler with Formspree
+// Form submission handler
 const privadosForm = document.getElementById('privados-form');
 if (privadosForm) {
-    privadosForm.addEventListener('submit', async (e) => {
+    privadosForm.addEventListener('submit', (e) => {
         e.preventDefault();
-
-        const data = new FormData(privadosForm);
-
-        try {
-            const response = await fetch(privadosForm.action, {
-                method: 'POST',
-                body: data,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            });
-
-            if (response.ok) {
-                alert('¡Gracias por tu solicitud! Nos pondremos en contacto contigo pronto.');
-                privadosForm.reset();
-            } else {
-                alert('Oops! Hubo un problema al enviar tu reserva.');
-            }
-        } catch (error) {
-            alert('Oops! Ocurrió un error al intentar contactar con el servidor.');
-        }
+        alert('¡Gracias por tu solicitud! Nos pondremos en contacto contigo pronto.');
+        privadosForm.reset();
     });
 }
 
@@ -108,7 +103,6 @@ document.querySelectorAll('.section').forEach(section => {
     section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
     observer.observe(section);
 });
-
 
 // Active nav link highlight on scroll
 window.addEventListener('scroll', () => {

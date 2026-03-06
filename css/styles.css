@@ -29,7 +29,6 @@
 }
 
 html {
-    /* NO overflow-x: hidden aquí — rompe position:fixed en iOS/WebKit */
     scroll-behavior: smooth;
 }
 
@@ -41,7 +40,6 @@ body {
     overflow-x: hidden;
     max-width: 100vw;
     position: relative;
-    /* Necesario para que overflow-x funcione sin romper fixed en iOS */
     -webkit-overflow-scrolling: touch;
 }
 
@@ -156,10 +154,12 @@ i.icon-cocktail::before {
     z-index: 1000;
     padding: 1rem 0;
     border-bottom: 1px solid rgba(0, 191, 99, 0.25);
+    /* Transición suave al ocultar/mostrar con scroll */
+    transition: transform 0.3s ease, background 0.3s ease;
     /* Fix iOS: backface-visibility estabiliza el layer sin romper fixed */
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-    will-change: background;
+    will-change: transform;
 }
 
 .nav-container {
