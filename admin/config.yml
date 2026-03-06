@@ -5,6 +5,7 @@ backend:
   use_pkce: true
   base_url: https://github.com
   auth_endpoint: login/oauth/authorize
+  app_id: Ov23liZbfmZnKinHdEJ3
 
 # Carpeta de medios (imágenes subidas desde el CMS)
 media_folder: "assets/img/uploads"
