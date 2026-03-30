@@ -54,48 +54,57 @@ collections:
                       - { label: "Música",     value: "icon-music" }
                       - { label: "Máscara",    value: "icon-mask" }
 
-          # ── Cócteles — afegir imagenPosicion a cada item ──────────────────────────────
-          # (dins la llista items de cocteles i tapas)
-          - label: "Lista de cócteles"
-            name: "items"
-            widget: "list"
+          # ── Cócteles ──────────────────────────────────────────────────────────
+          - label: "Cócteles"
+            name: "cocteles"
+            widget: "object"
             fields:
-              - { label: "Nombre",          name: "nombre",          widget: "string" }
-              - { label: "Ingredientes",    name: "ingredientes",    widget: "string" }
-              - { label: "Precio",          name: "precio",          widget: "string" }
-              - { label: "Imagen",          name: "imagen",          widget: "image",  required: false }
-              - label: "Posición de la imagen"
-                name: "imagenPosicion"
-                widget: "select"
-                default: "center center"
-                required: false
-                options:
-                  - { label: "Centro",         value: "center center" }
-                  - { label: "Arriba",         value: "center top" }
-                  - { label: "Abajo",          value: "center bottom" }
-                  - { label: "Izquierda",      value: "left center" }
-                  - { label: "Derecha",        value: "right center" }
+              - { label: "Título",    name: "titulo",    widget: "string" }
+              - { label: "Subtítulo", name: "subtitulo", widget: "string" }
+              - label: "Lista de cócteles"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Nombre",          name: "nombre",          widget: "string" }
+                  - { label: "Ingredientes",    name: "ingredientes",    widget: "string" }
+                  - { label: "Precio",          name: "precio",          widget: "string" }
+                  - { label: "Imagen",          name: "imagen",          widget: "image",  required: false }
+                  - label: "Posición de la imagen"
+                    name: "imagenPosicion"
+                    widget: "select"
+                    default: "center center"
+                    required: false
+                    options:
+                      - { label: "Centro",         value: "center center" }
+                      - { label: "Arriba",         value: "center top" }
+                      - { label: "Abajo",          value: "center bottom" }
+                      - { label: "Izquierda",      value: "left center" }
+                      - { label: "Derecha",        value: "right center" }
 
           # ── Tapas ─────────────────────────────────────────────────────────────
-          - label: "Lista de Tapas"
-            name: "items"
-            widget: "list"
+          - label: "Tapas"
+            name: "tapas"
+            widget: "object"
             fields:
-              - { label: "Nombre",          name: "nombre",          widget: "string" }
-              - { label: "Ingredientes",    name: "ingredientes",    widget: "string" }
-              - { label: "Precio",          name: "precio",          widget: "string" }
-              - { label: "Imagen",          name: "imagen",          widget: "image",  required: false }
-              - label: "Posición de la imagen"
-                name: "imagenPosicion"
-                widget: "select"
-                default: "center center"
-                required: false
-                options:
-                  - { label: "Centro",         value: "center center" }
-                  - { label: "Arriba",         value: "center top" }
-                  - { label: "Abajo",          value: "center bottom" }
-                  - { label: "Izquierda",      value: "left center" }
-                  - { label: "Derecha",        value: "right center" }
+              - label: "Lista de Tapas"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Nombre",          name: "nombre",          widget: "string" }
+                  - { label: "Ingredientes",    name: "ingredientes",    widget: "string" }
+                  - { label: "Precio",          name: "precio",          widget: "string" }
+                  - { label: "Imagen",          name: "imagen",          widget: "image",  required: false }
+                  - label: "Posición de la imagen"
+                    name: "imagenPosicion"
+                    widget: "select"
+                    default: "center center"
+                    required: false
+                    options:
+                      - { label: "Centro",         value: "center center" }
+                      - { label: "Arriba",         value: "center top" }
+                      - { label: "Abajo",          value: "center bottom" }
+                      - { label: "Izquierda",      value: "left center" }
+                      - { label: "Derecha",        value: "right center" }
                   
           # ── Eventos ───────────────────────────────────────────────────────────
           - label: "Eventos"
