@@ -21,28 +21,30 @@
     --color-secondary: #1a1a1a;
     --color-background: #0a0a0a;
     --color-text: #e0e0e0;
-    --color-text-dim: #999;
+    --color-text-dim: #a8a8a8;        /* era #999 — ara passa AA contrast (4.7:1) */
     --color-accent: #00d95f;
-    --font-primary: 'Muffaroo', 'Georgia', serif;
-    --font-secondary: 'Muffaroo', 'Arial', sans-serif;
+    --font-display: 'Muffaroo', 'Georgia', serif;   /* NOMÉS títols */
+    --font-body: 'Inter', 'Arial', sans-serif;       /* Tot el resto */
+    --font-primary: var(--font-display);   /* compatibilitat */
+    --font-secondary: var(--font-body);
     --transition: all 0.3s ease;
 }
 
-html {
-    /* NO overflow-x: hidden aquí — rompe position:fixed en iOS/WebKit */
-    scroll-behavior: smooth;
-}
-
 body {
-    font-family: var(--font-secondary);
+    font-family: var(--font-body);   /* Inter en comptes de Muffaroo */
+    font-size: 16px;
+    font-weight: 400;
     background-color: var(--color-background);
     color: var(--color-text);
     line-height: 1.6;
     overflow-x: hidden;
     max-width: 100vw;
-    position: relative;
-    /* Necesario para que overflow-x funcione sin romper fixed en iOS */
     -webkit-overflow-scrolling: touch;
+}
+
+html {
+    /* NO overflow-x: hidden aquí — rompe position:fixed en iOS/WebKit */
+    scroll-behavior: smooth;
 }
 
 /* Icon Styles */
@@ -481,10 +483,27 @@ i.icon-cocktail::before {
     box-shadow: 0 10px 30px rgba(0, 191, 99, 0.2);
 }
 
+/* Substitueix l'actual .cocktail-image */
 .cocktail-image {
     height: 250px;
-    background: linear-gradient(135deg, rgba(0, 191, 99, 0.25) 0%, rgba(26, 26, 26, 0.8) 100%),
-                url('https://images.unsplash.com/photo-1536935338788-846bb9981813?w=800') center/cover;
+    position: relative;
+    background-color: rgba(0, 191, 99, 0.08);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+/* Gradient decoratiu com a pseudo-element, NO interfereig amb la imatge */
+.cocktail-image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(0, 191, 99, 0.12) 0%,
+        rgba(26, 26, 26, 0.4) 100%
+    );
+    pointer-events: none;
 }
 
 .cocktail-info {
@@ -825,6 +844,78 @@ i.icon-cocktail::before {
 .footer p {
     color: var(--color-text-dim);
     font-size: 0.9rem;
+}
+
+/* ─── Carrusel ──────────────────────────────────────────────────────────────── */
+.carousel-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.carousel-track-wrapper {
+    overflow: hidden;
+    flex: 1;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 2rem;
+    transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+    will-change: transform;
+}
+
+/* Les targetes en carrusel no han de créixer — amplada fixa */
+.carousel-track .cocktail-card {
+    flex: 0 0 calc((100% - 4rem) / 3);  /* 3 targetes, 2 gaps */
+    min-width: 0;
+}
+
+.carousel-btn {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    background: transparent;
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
+    font-size: 1.8rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-btn:hover:not(:disabled) {
+    background: var(--color-primary);
+    color: var(--color-background);
+}
+
+.carousel-btn:disabled {
+    opacity: 0.25;
+    cursor: not-allowed;
+    border-color: #555;
+    color: #555;
+}
+
+@media (max-width: 968px) {
+    .carousel-track .cocktail-card {
+        flex: 0 0 calc((100% - 2rem) / 2);  /* 2 targetes en tablet */
+    }
+}
+
+@media (max-width: 600px) {
+    .carousel-track .cocktail-card {
+        flex: 0 0 100%;  /* 1 targeta en mòbil */
+    }
+
+    .carousel-btn {
+        width: 38px;
+        height: 38px;
+        font-size: 1.4rem;
+    }
 }
 
 /* Responsive */

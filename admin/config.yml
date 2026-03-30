@@ -27,8 +27,10 @@ collections:
             widget: "object"
             fields:
               - { label: "Tagline", name: "tagline", widget: "string" }
+              - { label: "Imagen de fondo", name: "background", widget: "image", required: false,
+                  hint: "Imagen de fondo del hero. Recomendado: 1920×1080px o más." }
 
-          # ── El Distrito ───────────────────────────────────────────────────────
+          # ── El Distrito ───────────────────────────────────────────────────────────
           - label: "El Distrito"
             name: "distrito"
             widget: "object"
@@ -37,37 +39,64 @@ collections:
               - { label: "Intro",     name: "intro",    widget: "text" }
               - { label: "Párrafo 1", name: "parrafo1", widget: "text" }
               - { label: "Párrafo 2", name: "parrafo2", widget: "text" }
-
-          # ── Cócteles ──────────────────────────────────────────────────────────
-          - label: "Cócteles de Autor"
-            name: "cocteles"
-            widget: "object"
-            fields:
-              - { label: "Título",    name: "titulo",    widget: "string" }
-              - { label: "Subtítulo", name: "subtitulo", widget: "text" }
-              - label: "Lista de cócteles"
-                name: "items"
+              - label: "Características destacadas"
+                name: "features"
                 widget: "list"
                 fields:
-                  - { label: "Nombre",       name: "nombre",       widget: "string" }
-                  - { label: "Ingredientes", name: "ingredientes", widget: "string" }
-                  - { label: "Precio",       name: "precio",       widget: "string" }
-                  - { label: "Imagen",       name: "imagen",       widget: "image", required: false }
+                  - { label: "Título",      name: "titulo",      widget: "string" }
+                  - { label: "Descripción", name: "descripcion", widget: "string", required: false }
+                  - label: "Icono"
+                    name: "icono"
+                    widget: "select"
+                    default: "icon-cocktail"
+                    options:
+                      - { label: "Cóctel",     value: "icon-cocktail" }
+                      - { label: "Música",     value: "icon-music" }
+                      - { label: "Máscara",    value: "icon-mask" }
+
+          # ── Cócteles — afegir imagenPosicion a cada item ──────────────────────────────
+          # (dins la llista items de cocteles i tapas)
+          - label: "Lista de cócteles"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Nombre",          name: "nombre",          widget: "string" }
+              - { label: "Ingredientes",    name: "ingredientes",    widget: "string" }
+              - { label: "Precio",          name: "precio",          widget: "string" }
+              - { label: "Imagen",          name: "imagen",          widget: "image",  required: false }
+              - label: "Posición de la imagen"
+                name: "imagenPosicion"
+                widget: "select"
+                default: "center center"
+                required: false
+                options:
+                  - { label: "Centro",         value: "center center" }
+                  - { label: "Arriba",         value: "center top" }
+                  - { label: "Abajo",          value: "center bottom" }
+                  - { label: "Izquierda",      value: "left center" }
+                  - { label: "Derecha",        value: "right center" }
 
           # ── Tapas ─────────────────────────────────────────────────────────────
-          - label: "Tapas"
-            name: "tapas"
-            widget: "object"
+          - label: "Lista de Tapas"
+            name: "items"
+            widget: "list"
             fields:
-              - label: "Lista de tapas"
-                name: "items"
-                widget: "list"
-                fields:
-                  - { label: "Nombre",       name: "nombre",       widget: "string" }
-                  - { label: "Ingredientes", name: "ingredientes", widget: "string" }
-                  - { label: "Precio",       name: "precio",       widget: "string" }
-                  - { label: "Imagen",       name: "imagen",       widget: "image", required: false }
-
+              - { label: "Nombre",          name: "nombre",          widget: "string" }
+              - { label: "Ingredientes",    name: "ingredientes",    widget: "string" }
+              - { label: "Precio",          name: "precio",          widget: "string" }
+              - { label: "Imagen",          name: "imagen",          widget: "image",  required: false }
+              - label: "Posición de la imagen"
+                name: "imagenPosicion"
+                widget: "select"
+                default: "center center"
+                required: false
+                options:
+                  - { label: "Centro",         value: "center center" }
+                  - { label: "Arriba",         value: "center top" }
+                  - { label: "Abajo",          value: "center bottom" }
+                  - { label: "Izquierda",      value: "left center" }
+                  - { label: "Derecha",        value: "right center" }
+                  
           # ── Eventos ───────────────────────────────────────────────────────────
           - label: "Eventos"
             name: "eventos"

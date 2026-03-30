@@ -3,14 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hidden District - Bar de Cócteles</title>
+    <title>Hidden District — Coctelería Conceptual · Barcelona</title>
+
+    <!-- SEO -->
+    <meta name="description" content="Coctelería conceptual en Barcelona. Cócteles de autor, música en vivo y eventos privados en un espacio industrial único.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://hiddendistrictbcn.com/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="restaurant">
+    <meta property="og:title" content="Hidden District — Coctelería Conceptual">
+    <meta property="og:description" content="Coctelería conceptual en Barcelona. Cócteles de autor, música en vivo y eventos privados.">
+    <meta property="og:image" content="https://hiddendistrictbcn.com/assets/img/hidden-logo.png">
+    <meta property="og:url" content="https://hiddendistrictbcn.com/">
+
+    <!-- JSON-LD LocalBusiness -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BarOrPub",
+      "name": "Hidden District",
+      "description": "Coctelería conceptual en Barcelona",
+      "url": "https://hiddendistrictbcn.com",
+      "telephone": "+34722186191",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Barcelona",
+        "addressCountry": "ES"
+      },
+      "openingHoursSpecification": [
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Wednesday","Thursday"], "opens": "18:00", "closes": "02:30" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday","Saturday"], "opens": "18:00", "closes": "03:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "18:00", "closes": "00:00" }
+      ]
+    }
+    </script>
+
+    <!-- Google Fonts: Inter per a body text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
     <link rel="icon" type="image/jpeg" href="assets/img/favicon.jpg">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/admin.css">
 </head>
 <body>
     <!-- Hero Section -->
-    <header id="home" class="hero">
+    <header id="home" class="hero" id="hero-section">
         <nav class="navbar">
             <div class="nav-container">
                 <div class="logo">
@@ -54,7 +94,7 @@
                     <p id="distrito-parrafo1"></p>
                     <p id="distrito-parrafo2"></p>
                 </div>
-                <div class="distrito-features">
+                <div class="distrito-features" id="distrito-features">
                     <div class="feature">
                         <div class="feature-icon icon-cocktail"></div>
                         <h3>CÓCTELES</h3>
@@ -88,15 +128,23 @@
 
             <!-- Contenedor Cócteles -->
             <div id="cocteles-tab" class="menu-content active">
-                <div class="cocktail-grid" id="cocktail-grid">
-                    <!-- Inyectado por main.js -->
+                <div class="carousel-container">
+                    <button class="carousel-btn carousel-prev" id="cocteles-prev" aria-label="Anterior">&#8249;</button>
+                    <div class="carousel-track-wrapper">
+                        <div class="carousel-track" id="cocktail-grid"></div>
+                    </div>
+                    <button class="carousel-btn carousel-next" id="cocteles-next" aria-label="Siguiente">&#8250;</button>
                 </div>
             </div>
 
             <!-- Contenedor Tapas -->
             <div id="tapas-tab" class="menu-content">
-                <div class="cocktail-grid" id="tapas-grid">
-                    <!-- Inyectado por main.js -->
+                <div class="carousel-container">
+                    <button class="carousel-btn carousel-prev" id="tapas-prev" aria-label="Anterior">&#8249;</button>
+                    <div class="carousel-track-wrapper">
+                        <div class="carousel-track" id="tapas-grid"></div>
+                    </div>
+                    <button class="carousel-btn carousel-next" id="tapas-next" aria-label="Siguiente">&#8250;</button>
                 </div>
             </div>
         </div>
@@ -209,5 +257,13 @@
     <!-- Scripts -->
     <script src="js/main.js"></script>
     <script src="js/script.js"></script>
+
+    <noscript>
+        <div style="background:#0a0a0a;color:#e0e0e0;padding:2rem;text-align:center;font-family:sans-serif;">
+            <h1>Hidden District — Coctelería Conceptual</h1>
+            <p>Barcelona · Mar–Dom 18:00h · <a href="tel:+34722186191" style="color:#00bf63">722 18 61 91</a></p>
+            <p><a href="https://www.instagram.com/hiddendistrictbcn" style="color:#00bf63">Instagram</a></p>
+        </div>
+    </noscript>
 </body>
 </html>

@@ -10,8 +10,10 @@
  * @param {Object} item - { nombre, ingredientes, precio, imagen }
  */
 function plantillaTarjetaMenu(item) {
+    // Posició editable des del CMS, per defecte "center center"
+    const posicio = item.imagenPosicion || 'center center';
     const estiloImagen = item.imagen
-        ? `background-image: url('${item.imagen}');`
+        ? `background-image: url('${item.imagen}'); background-position: ${posicio};`
         : '';
 
     return `
@@ -45,6 +47,16 @@ function plantillaTarjetaEvento(evento) {
                     <span><i class="icon-music"></i> ${evento.tipo}</span>
                 </div>
             </div>
+        </div>
+    `;
+}
+
+function plantillaFeature(feature) {
+    return `
+        <div class="feature">
+            <div class="feature-icon ${feature.icono || 'icon-cocktail'}"></div>
+            <h3>${feature.titulo}</h3>
+            <p>${feature.descripcion || ''}</p>
         </div>
     `;
 }
@@ -85,6 +97,20 @@ async function cargarContenido() {
 
         // ── Hero ──────────────────────────────────────────────────────────────
         document.getElementById('hero-tagline').textContent = datos.hero.tagline;
+
+        // ── Hero: imatge de fons editable ─────────────────────────────────────────
+        if (datos.hero.background) {
+            document.getElementById('hero-section').style.backgroundImage =
+                `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('${datos.hero.background}')`;
+        }
+
+        // ── Features del Distrito ─────────────────────────────────────────────────
+        const contenedorFeatures = document.getElementById('distrito-features');
+        if (contenedorFeatures && datos.distrito.features) {
+            contenedorFeatures.innerHTML = datos.distrito.features
+                .map(plantillaFeature)
+                .join('');
+        }
 
         // ── El Distrito ───────────────────────────────────────────────────────
         document.getElementById('distrito-titulo').textContent   = datos.distrito.titulo;
