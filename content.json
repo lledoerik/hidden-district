@@ -8,10 +8,22 @@
     "parrafo1": "Todo gira alrededor de la historia, cada zona parece parte de un sistema y la carta sigue esa misma idea. Los cócteles se presentan como elixires del distrito. Sabores intensos, toques ahumados, herbales y cítricos, y rituales sencillos que hacen que cada trago tenga carácter.",
     "parrafo2": "Es un sitio para venir con calma, mirar alrededor, descubrir detalles y dejarse llevar por la atmósfera. Un lugar escondido, diferente, hecho para quien busca algo más que \"otro bar\".",
     "features": [
-      { "titulo": "CÓCTELES",  "descripcion": "Elixires del distrito", "icono": "icon-cocktail" },
-      { "titulo": "MÚSICA",    "descripcion": "Sonido para cada noche", "icono": "icon-music" },
-      { "titulo": "FUTBOLÍN",  "descripcion": "El clásico del distrito", "icono": "icon-mask" }
-   ] 
+      {
+        "titulo": "CÓCTELES",
+        "descripcion": "Elixires del distrito",
+        "icono": "icon-cocktail"
+      },
+      {
+        "titulo": "MÚSICA",
+        "descripcion": "Sonido para cada noche",
+        "icono": "icon-music"
+      },
+      {
+        "titulo": "FUTBOLÍN",
+        "descripcion": "El clásico del distrito",
+        "icono": "icon-mask"
+      }
+    ]
   },
   "cocteles": {
     "titulo": "CÓCTELES DE AUTOR",
@@ -35,7 +47,7 @@
         "nombre": "Próximamente",
         "ingredientes": "Secret",
         "precio": "0 €",
-        "imagen": "",
+        "imagen": "/assets/img/uploads/0f5e1538-c3d5-4ad1-9671-b4fae5074122.jpg",
         "imagenPosicion": "center center"
       },
       {
