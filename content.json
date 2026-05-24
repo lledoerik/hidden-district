@@ -148,20 +148,20 @@
     "subtitulo": "¡Eventos del distrito, fiesta, descuentos y días especiales!",
     "items": [
       {
-        "dia": "7",
-        "mes": "MAR",
+        "dia": "27",
+        "mes": "MAYO",
         "titulo": "Apertura",
-        "descripcion": "Próximamente",
-        "hora": "18:00 h",
-        "tipo": "Rock"
+        "descripcion": "Abrimos las puertas de nuestro local por primera vez",
+        "hora": "17:00 h",
+        "tipo": "Musica ambiente"
       },
       {
-        "dia": "23",
-        "mes": "ABR",
-        "titulo": "Sant Jordi",
-        "descripcion": "Próximamente",
-        "hora": "18:00 - 02:30 h",
-        "tipo": "Techno"
+        "dia": "29 - 30",
+        "mes": "Mayo",
+        "titulo": "Fiesta de apertura",
+        "descripcion": "Apertura a lo grande, música alta, copas rápidas y un buen ambiente fiestero",
+        "hora": "17:00 - 3:00 h",
+        "tipo": "Rock"
       },
       {
         "dia": "7",
@@ -169,7 +169,7 @@
         "titulo": "Próximamente",
         "descripcion": "Próximamente",
         "hora": "18:00 - 02:30 h",
-        "tipo": "Trance"
+        "tipo": "Proximamente"
       }
     ]
   },
