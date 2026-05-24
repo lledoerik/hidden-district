@@ -156,7 +156,7 @@
         "tipo": "Musica ambiente"
       },
       {
-        "dia": "29 y 30",
+        "dia": "29 30",
         "mes": "Mayo",
         "titulo": "Fiesta de apertura",
         "descripcion": "Apertura a lo grande, música alta, copas rápidas y un buen ambiente fiestero",
@@ -177,13 +177,14 @@
     "titulo": "EVENTOS PRIVADOS",
     "subtitulo": "Reserva nuestra planta superior",
     "tituloPrincipal": "¿Qué ofrecemos?",
-    "descripcion": "Al reservar nuestra sala tienes:\nNos adaptamos a sus necesidades",
+    "descripcion": "Al reservar nuestra sala tienes:",
     "caracteristicas": [
       "Sala privada",
       "Barra privada",
       "Musica",
       "Futbolín",
-      "Aforo de 20 personas"
+      "Aforo de 20 personas",
+      "Nos adaptamos a sus necesidades"
     ],
     "precio": "0€ (Minimo 10 personas)"
   },
