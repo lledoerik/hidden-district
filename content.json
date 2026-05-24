@@ -15,12 +15,12 @@
       },
       {
         "titulo": "MÚSICA",
-        "descripcion": "Sonido para cada noche",
+        "descripcion": "Rock nacional e internacional",
         "icono": "icon-music"
       },
       {
-        "titulo": "FUTBOLÍN",
-        "descripcion": "El clásico del distrito",
+        "titulo": "PUB",
+        "descripcion": "Las noches de caos",
         "icono": "icon-mask"
       }
     ]
@@ -44,10 +44,10 @@
         "imagenPosicion": "center center"
       },
       {
-        "nombre": "Próximamente",
-        "ingredientes": "Secret",
-        "precio": "0 €",
-        "imagen": "",
+        "nombre": "VAPOR",
+        "ingredientes": "Chartreuse verde - Licor de crema",
+        "precio": "9 €",
+        "imagen": "/assets/img/uploads/ChatGPT Image 23 feb 2026, 16_23_13.png",
         "imagenPosicion": "center center"
       },
       {
