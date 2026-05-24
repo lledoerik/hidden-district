@@ -41,33 +41,47 @@
         "ingredientes": "Gin Bombay - Licor de violeta - Zumo de arandanos - Limon - Yema curada",
         "precio": "11 €",
         "imagen": "/assets/img/uploads/ChatGPT Image 23 feb 2026, 16_09_00.png",
-        "imagenPosicion": "center top"
+        "imagenPosicion": "left center"
       },
       {
         "nombre": "TIKICAT",
-        "ingredientes": "Secret",
+        "ingredientes": "Ron blanco - Licor de coco - Zumo de naranja - Zumo de piña",
         "precio": "10 €",
         "imagen": "/assets/img/uploads/tikicat_child_style_transparent.png",
         "imagenPosicion": "center center"
       },
       {
-        "nombre": "Próximamente",
+        "nombre": "SHIMMER",
         "ingredientes": "Secret",
-        "precio": "0 €",
-        "imagen": "",
+        "precio": "10 €",
+        "imagen": "/assets/img/uploads/ChatGPT Image 23 feb 2026, 16_35_49.png",
         "imagenPosicion": "center center"
       },
       {
-        "nombre": "Próximamente",
+        "nombre": "SPORE",
         "ingredientes": "Secret",
-        "precio": "0 €",
-        "imagen": "",
+        "precio": "9 €",
+        "imagen": "/assets/img/uploads/ChatGPT Image 23 feb 2026, 16_19_56.png",
         "imagenPosicion": "center center"
       },
       {
-        "nombre": "Próximamente",
+        "nombre": "INFANCIA",
         "ingredientes": "Secret",
         "precio": "0 €",
+        "imagen": "/assets/img/uploads/ChatGPT Image 23 feb 2026, 16_44_57.png",
+        "imagenPosicion": "center center"
+      },
+      {
+        "nombre": "MONKEY BUSINESS",
+        "ingredientes": "E",
+        "precio": "9",
+        "imagen": "/assets/img/uploads/vaso_redondo_sin_fondo.png",
+        "imagenPosicion": "center center"
+      },
+      {
+        "nombre": "HANDSHAKE",
+        "ingredientes": "E",
+        "precio": "8",
         "imagen": "",
         "imagenPosicion": "center center"
       }
