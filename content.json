@@ -82,7 +82,28 @@
         "nombre": "HANDSHAKE",
         "ingredientes": "E",
         "precio": "8",
-        "imagen": "",
+        "imagen": "/assets/img/uploads/vaso_redondo_sin_fondoiri.png",
+        "imagenPosicion": "center center"
+      },
+      {
+        "nombre": "VAULT",
+        "ingredientes": "e",
+        "precio": "10",
+        "imagen": "/assets/img/uploads/vaso_redondo_sin_fondo41322.png",
+        "imagenPosicion": "center center"
+      },
+      {
+        "nombre": "LOTUS",
+        "ingredientes": "E",
+        "precio": "8",
+        "imagen": "/assets/img/uploads/vaso_redondo_sin_fondoirie.png",
+        "imagenPosicion": "center center"
+      },
+      {
+        "nombre": "PRESSURE DROP",
+        "ingredientes": "e",
+        "precio": "8",
+        "imagen": "/assets/img/uploads/vaso_redondo_sin_fondoEWQ.png",
         "imagenPosicion": "center center"
       }
     ]
