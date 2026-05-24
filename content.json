@@ -44,10 +44,10 @@
         "imagenPosicion": "center top"
       },
       {
-        "nombre": "Smoke & Salt Espresso",
+        "nombre": "TIKICAT",
         "ingredientes": "Secret",
-        "precio": "0 €",
-        "imagen": "",
+        "precio": "10 €",
+        "imagen": "/assets/img/uploads/tikicat_child_style_transparent.png",
         "imagenPosicion": "center center"
       },
       {
