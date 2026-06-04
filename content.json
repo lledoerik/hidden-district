@@ -148,24 +148,24 @@
     "subtitulo": "¡Eventos del distrito, fiesta, descuentos y días especiales!",
     "items": [
       {
-        "dia": "27",
-        "mes": "MAYO",
+        "dia": "3",
+        "mes": "Junio",
         "titulo": "Apertura",
         "descripcion": "Abrimos las puertas de nuestro local por primera vez",
-        "hora": "17:00 h",
-        "tipo": "Musica ambiente"
+        "hora": "17:00 - 2:30 h",
+        "tipo": "Rock"
       },
       {
-        "dia": "29",
-        "mes": "Mayo",
+        "dia": "5",
+        "mes": "Junio",
         "titulo": "Fiesta de apertura",
         "descripcion": "Apertura a lo grande, música alta, copas rápidas y un buen ambiente fiestero",
         "hora": "17:00 - 3:00 h",
         "tipo": "Rock"
       },
       {
-        "dia": "30",
-        "mes": "Mayo",
+        "dia": "6",
+        "mes": "Junio",
         "titulo": "Fiesta de apertura",
         "descripcion": "Apertura a lo grande, música alta, copas rápidas y un buen ambiente fiestero",
         "hora": "17:00 - 3:00 h",
