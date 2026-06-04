@@ -247,7 +247,7 @@ i.icon-cocktail::before {
 .hero {
     height: 100vh;
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-                url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=1920') center/cover;
+                url('../assets/img/hidden-background.jpg') center/cover;
     display: flex;
     flex-direction: column;
     justify-content: center;
