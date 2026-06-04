@@ -32,85 +32,85 @@
     "items": [
       {
         "nombre": "VAPOR",
-        "ingredientes": "Chartreuse verde,  Baileys, angostura, zumo de piña",
+        "ingredientes": "Chartreuse verde,  Baileys, angostura, zumo de piña.",
         "precio": "11 €",
         "imagen": "/assets/img/uploads/vaso_redondo_sin_fondor423.png",
         "imagenPosicion": "center center"
       },
       {
         "nombre": "ALQUIMISTA",
-        "ingredientes": "Gin Bombay, licor de violeta, zumo de arándanos, limón",
+        "ingredientes": "Gin Bombay, licor de violeta, zumo de arándanos, limón.",
         "precio": "10 €",
         "imagen": "/assets/img/uploads/vaso_redondo_sin_fondo312213.png",
         "imagenPosicion": "left center"
       },
       {
         "nombre": "TIKICAT",
-        "ingredientes": "Ron blanco, licor de coco, zumo de naranja, zumo de piña",
+        "ingredientes": "Ron blanco, licor de coco, zumo de naranja, zumo de piña.",
         "precio": "11 €",
         "imagen": "/assets/img/uploads/vaso_redondo_sin_fondo3424.png",
         "imagenPosicion": "center center"
       },
       {
         "nombre": "SHIMMER",
-        "ingredientes": "Ginebra | Licor de violeta | Zumo de limón | Soda",
+        "ingredientes": "Ginebra, licor de violeta, zumo de limón, soda.",
         "precio": "11 €",
         "imagen": "/assets/img/uploads/vaso_redondo_sin_fondo344.png",
         "imagenPosicion": "center center"
       },
       {
         "nombre": "SPORE",
-        "ingredientes": "Vodka infusionado | Licor de café | Café | Clara de huevo pasteurizada",
+        "ingredientes": "Vodka infusionado, licor de café, café, clara de huevo pasteurizada.",
         "precio": "9 €",
         "imagen": "/assets/img/uploads/vaso_redondo_sin_fondo321.png",
         "imagenPosicion": "center center"
       },
       {
         "nombre": "INFANCIA",
-        "ingredientes": "Secret",
-        "precio": "10€",
+        "ingredientes": "Tequila, licor de flor, fruta de la pasión, sirope simple.",
+        "precio": "9 €",
         "imagen": "/assets/img/uploads/vaso_redondo_sin_fondo2.png",
         "imagenPosicion": "center center"
       },
       {
         "nombre": "MONKEY BUSINESS",
-        "ingredientes": "E",
-        "precio": "10€",
+        "ingredientes": "Ron blanco, zumo de plátano, zumo de lima, cordial de frutos rojos.",
+        "precio": "12 €",
         "imagen": "/assets/img/uploads/vaso_redondo_sin_fondo22.png",
         "imagenPosicion": "center center"
       },
       {
         "nombre": "HANDSHAKE",
-        "ingredientes": "E",
-        "precio": "8€",
+        "ingredientes": "Sake, vodka, zumo de kiwi, sirope de agave.",
+        "precio": "6 €",
         "imagen": "/assets/img/uploads/vaso_redondo_sin_fondoiri.png",
         "imagenPosicion": "center center"
       },
       {
         "nombre": "VAULT",
-        "ingredientes": "e",
-        "precio": "10€",
+        "ingredientes": "Licor de nuez, licor de violeta, fruta de la pasión, licor agave de sugar.",
+        "precio": "11 €",
         "imagen": "/assets/img/uploads/vaso_redondo_sin_fondo41322.png",
         "imagenPosicion": "center center"
       },
       {
         "nombre": "LOTUS",
-        "ingredientes": "E",
-        "precio": "8€",
+        "ingredientes": "Vodka, licor de grosella, zumo de fresa, zumo de lima.",
+        "precio": "8 €",
         "imagen": "/assets/img/uploads/vaso_redondo_sin_fondoirie.png",
         "imagenPosicion": "center center"
       },
       {
         "nombre": "PRESSURE DROP",
-        "ingredientes": "e",
-        "precio": "8€",
+        "ingredientes": "Gin con infusión cítrica, tónica, limón, angostura.",
+        "precio": "9 €",
         "imagen": "/assets/img/uploads/vaso_redondo_sin_fondoEWQ.png",
         "imagenPosicion": "center center"
       },
       {
         "nombre": "LOWTOWN",
-        "ingredientes": "E",
-        "precio": "7€",
+        "ingredientes": "Secreto...",
+        "precio": "9 €",
         "imagen": "/assets/img/uploads/vaso_redondo_sin_fondoewqe.png",
         "imagenPosicion": "center center"
       }
@@ -119,28 +119,63 @@
   "tapas": {
     "items": [
       {
-        "nombre": "Croquetas del distrito",
-        "ingredientes": "Secret",
-        "precio": "0 €",
+        "nombre": "BANDERILLAS (2 uds)",
+        "ingredientes": "Banderillas de boquerón con aceituna gordal rellena de pimiento rojo.",
+        "precio": "4 €",
         "imagen": ""
       },
       {
-        "nombre": "Próximamente",
-        "ingredientes": "Secret",
-        "precio": "0 €",
+        "nombre": "EL PACTO · MATRIMONIO",
+        "ingredientes": "Anchoa del cantábrico y boquerón en vinagre con ajo y perejil.",
+        "precio": "5.50 €",
         "imagen": ""
       },
       {
-        "nombre": "Próximamente",
-        "ingredientes": "Secret",
-        "precio": "0 €",
+        "nombre": "ACEITUNAS DEL DISTRITO",
+        "ingredientes": "Aceitunas rellenas de anchoa.",
+        "precio": "3.50 €",
         "imagen": ""
       },
       {
-        "nombre": "Próximamente",
-        "ingredientes": "Secret",
-        "precio": "0 €",
+        "nombre": "PAN CON TOMATE Y JAMÓN",
+        "ingredientes": "Pan, tomate maduro, aceite y jamón ibérico.",
+        "precio": "5 €",
         "imagen": ""
+      },
+      {
+        "nombre": "BERBERE3CHOS",
+        "ingredientes": "Berberechos al vapor servidos con limón.",
+        "precio": "5.50 €",
+        "imagen": "",
+        "imagenPosicion": "center center"
+      },
+      {
+        "nombre": "CROQUETAS",
+        "ingredientes": "Bechamel emplatadas (leche harina de trigo, mantequilla, cebolla, jamón ibérico, nuez moscada, sal, pimienta), rebozado (huevo, pan rallado). Fritas en aceite de oliva virgen extra.",
+        "precio": "6.50 €",
+        "imagen": "",
+        "imagenPosicion": "center center"
+      },
+      {
+        "nombre": "CALAMARES A LA ANDALUZA",
+        "ingredientes": "Anillas de calamar fritas. Harina de trigo, sal y limón,.",
+        "precio": "8 €",
+        "imagen": "",
+        "imagenPosicion": "center center"
+      },
+      {
+        "nombre": "PATATAS BRAVAS",
+        "ingredientes": "Patatas cortadas en dados, fritas en aceite de oliva. Salsa brava y alioli casero.",
+        "precio": "5.50 €",
+        "imagen": "",
+        "imagenPosicion": "center center"
+      },
+      {
+        "nombre": "NUGGETS",
+        "ingredientes": "Pechuga de pollo empanada. Fritos en aceite de oliva virgen extra.",
+        "precio": "5.50 €",
+        "imagen": "",
+        "imagenPosicion": "center center"
       }
     ]
   },
