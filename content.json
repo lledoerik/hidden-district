@@ -1,6 +1,7 @@
 {
   "hero": {
-    "tagline": "COCTELERÍA CONCEPTUAL"
+    "tagline": "COCTELERÍA CONCEPTUAL",
+    "background": "/assets/img/uploads/hidden.jpg"
   },
   "distrito": {
     "titulo": "EL DISTRITO",
