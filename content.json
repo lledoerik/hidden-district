@@ -1,7 +1,7 @@
 {
   "hero": {
     "tagline": "COCTELERÍA CONCEPTUAL",
-    "background": "/assets/img/uploads/hidden.jpg"
+    "background": ""
   },
   "distrito": {
     "titulo": "EL DISTRITO",
@@ -32,15 +32,15 @@
     "items": [
       {
         "nombre": "VAPOR",
-        "ingredientes": "Chartreuse verde - Licor de crema",
-        "precio": "9€",
+        "ingredientes": "Chartreuse verde | Baileys | Angostura | Zumo de piña",
+        "precio": "11 €",
         "imagen": "/assets/img/uploads/vaso_redondo_sin_fondor423.png",
         "imagenPosicion": "center center"
       },
       {
         "nombre": "ALQUIMISTA",
-        "ingredientes": "Gin Bombay - Licor de violeta - Zumo de arandanos - Limon - Yema curada",
-        "precio": "11€",
+        "ingredientes": "Gin Bombay | Licor de violeta | Zumo de arándanos | Limón",
+        "precio": "10€",
         "imagen": "/assets/img/uploads/vaso_redondo_sin_fondo312213.png",
         "imagenPosicion": "left center"
       },
