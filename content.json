@@ -32,36 +32,36 @@
     "items": [
       {
         "nombre": "VAPOR",
-        "ingredientes": "Chartreuse verde | Baileys | Angostura | Zumo de piña",
+        "ingredientes": "Chartreuse verde,  Baileys, angostura, zumo de piña",
         "precio": "11 €",
         "imagen": "/assets/img/uploads/vaso_redondo_sin_fondor423.png",
         "imagenPosicion": "center center"
       },
       {
         "nombre": "ALQUIMISTA",
-        "ingredientes": "Gin Bombay | Licor de violeta | Zumo de arándanos | Limón",
-        "precio": "10€",
+        "ingredientes": "Gin Bombay, licor de violeta, zumo de arándanos, limón",
+        "precio": "10 €",
         "imagen": "/assets/img/uploads/vaso_redondo_sin_fondo312213.png",
         "imagenPosicion": "left center"
       },
       {
         "nombre": "TIKICAT",
-        "ingredientes": "Ron blanco - Licor de coco - Zumo de naranja - Zumo de piña",
-        "precio": "10€",
+        "ingredientes": "Ron blanco, licor de coco, zumo de naranja, zumo de piña",
+        "precio": "11 €",
         "imagen": "/assets/img/uploads/vaso_redondo_sin_fondo3424.png",
         "imagenPosicion": "center center"
       },
       {
         "nombre": "SHIMMER",
-        "ingredientes": "Secret",
-        "precio": "10€",
+        "ingredientes": "Ginebra | Licor de violeta | Zumo de limón | Soda",
+        "precio": "11 €",
         "imagen": "/assets/img/uploads/vaso_redondo_sin_fondo344.png",
         "imagenPosicion": "center center"
       },
       {
         "nombre": "SPORE",
-        "ingredientes": "Secret",
-        "precio": "9€",
+        "ingredientes": "Vodka infusionado | Licor de café | Café | Clara de huevo pasteurizada",
+        "precio": "9 €",
         "imagen": "/assets/img/uploads/vaso_redondo_sin_fondo321.png",
         "imagenPosicion": "center center"
       },
